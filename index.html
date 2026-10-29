@@ -1,0 +1,1179 @@
+<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" href="icons/favicon-64.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><meta name="theme-color" content="#0A1A3A"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><title>Landmark Estate Films</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap" media="print" onload="this.media='all'">
+<style>
+/* Layout: navy side rail (brand), off-white working canvas; bottom tab bar under 900px. */
+:root{
+  --bg:#F5F3EE; --surface:#FFFFFF; --surface2:#EEEBE2; --fg:#0A1A3A; --muted:#5B6579; --line:#DDD8CB;
+  --accent:#A65F2D; --accent-fg:#FFFFFF; --gold:#B8955C;
+  --good:#237A55; --warn:#99650F; --bad:#B03A2A; --good-bg:#E3F1EA; --warn-bg:#F7EBD0; --bad-bg:#F8E1DC; --info-bg:#E4E9F3;
+  --nav-bg:rgba(10,26,58,.88); --nav-fg:#D8D3C4; --nav-active:#D9C197; --shadow:0 1px 2px rgba(10,26,58,.06),0 6px 24px rgba(10,26,58,.06);
+  --ui:'Vazirmatn',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif; --brand:'Poppins','Vazirmatn',system-ui,sans-serif;
+  --glass:rgba(255,255,255,.58); --glass-strong:rgba(255,255,255,.82); --glass-line:rgba(255,255,255,.78); --inp:rgba(255,255,255,.6);
+  --glass-shadow:0 8px 32px rgba(10,26,58,.10),inset 0 1px 0 rgba(255,255,255,.7);
+  --b1:rgba(217,193,151,.65); --b2:rgba(166,95,45,.30); --b3:rgba(52,96,176,.26);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#060D1C; --surface:#0E1A33; --surface2:#152443; --fg:#F1EEE6; --muted:#98A4BC; --line:#23334F;
+  --accent:#D9C197; --accent-fg:#0A1A3A; --gold:#D9C197;
+  --good:#5CC49A; --warn:#E0B04F; --bad:#EE8F7C; --good-bg:#12332A; --warn-bg:#3A2D12; --bad-bg:#40201B; --info-bg:#172544;
+  --nav-bg:rgba(4,10,22,.74); --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 24px rgba(0,0,0,.35); color-scheme:dark;
+  --glass:rgba(18,32,62,.46); --glass-strong:rgba(12,24,48,.84); --glass-line:rgba(217,193,151,.17); --inp:rgba(255,255,255,.06);
+  --glass-shadow:0 8px 32px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.07);
+  --b1:rgba(184,149,92,.30); --b2:rgba(166,95,45,.26); --b3:rgba(40,90,190,.34);
+}}
+:root[data-theme="dark"]{
+  --bg:#060D1C; --surface:#0E1A33; --surface2:#152443; --fg:#F1EEE6; --muted:#98A4BC; --line:#23334F;
+  --accent:#D9C197; --accent-fg:#0A1A3A; --gold:#D9C197;
+  --good:#5CC49A; --warn:#E0B04F; --bad:#EE8F7C; --good-bg:#12332A; --warn-bg:#3A2D12; --bad-bg:#40201B; --info-bg:#172544;
+  --nav-bg:rgba(4,10,22,.74); --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 24px rgba(0,0,0,.35); color-scheme:dark;
+  --glass:rgba(18,32,62,.46); --glass-strong:rgba(12,24,48,.84); --glass-line:rgba(217,193,151,.17); --inp:rgba(255,255,255,.06);
+  --glass-shadow:0 8px 32px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.07);
+  --b1:rgba(184,149,92,.30); --b2:rgba(166,95,45,.26); --b3:rgba(40,90,190,.34);
+}
+*{box-sizing:border-box}
+button,.btn,a,select,input,textarea{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.qr{display:flex;justify-content:center;padding:12px;background:#fff;border-radius:12px;min-height:180px;align-items:center}
+.qr svg{width:min(240px,100%);height:auto}
+.linkbox{width:100%;direction:ltr;text-align:left;font-size:13px}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--ui);font-size:15px;line-height:1.55;
+  padding-left:max(0px,env(safe-area-inset-left,0px));padding-right:max(0px,env(safe-area-inset-right,0px));margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+input,select,textarea{font-size:16px}
+h1,h2,h3{margin:0;text-wrap:balance}
+.app{display:grid;grid-template-columns:232px minmax(0,1fr);min-height:100%}
+.side{background:var(--nav-bg);color:var(--nav-fg);padding:20px 14px;display:flex;flex-direction:column;gap:6px;position:sticky;top:env(safe-area-inset-top,0px);height:100vh;height:100dvh;align-self:start}
+.logo{display:block;padding:2px 4px 16px}.logo .lg{display:block;width:100%;max-width:190px;margin:0 auto;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.35)}.top .mk{display:none;width:34px;height:34px;border-radius:9px;vertical-align:middle;margin-inline-end:8px}@media(max-width:899px){.top .mk{display:inline-block}}
+.logo svg{width:34px;height:34px;flex:none}
+.logo b{display:block;font:600 17px/1.1 var(--brand);letter-spacing:.04em;color:#F5F3EE}
+.logo small{display:block;font:500 9px/1.4 var(--brand);letter-spacing:.28em;color:#D9C197}
+.nav{display:flex;flex-direction:column;gap:2px}
+.nav button{display:flex;align-items:center;gap:12px;background:none;border:0;color:var(--nav-fg);padding:10px 12px;border-radius:10px;cursor:pointer;text-align:start;font-weight:500;width:100%}
+.nav button svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.nav button:hover{background:rgba(255,255,255,.07)}
+.nav button[aria-current="page"]{background:rgba(217,193,151,.14);color:var(--nav-active)}
+.nav .badge{margin-inline-start:auto;background:#D9C197;color:#0A1A3A;border-radius:99px;font-size:11px;font-weight:700;padding:0 7px;min-width:20px;text-align:center}
+.side .foot{margin-top:auto;font-size:12px;color:#8E98AE;padding:8px}
+main{padding:22px clamp(16px,3vw,36px) 40px;min-width:0}
+.top{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.top h1{font-size:24px;font-weight:700;flex:1;min-width:0}
+.tools{display:flex;gap:8px;align-items:center}
+a.btn{text-decoration:none}
+.ver{font-size:11px;font-weight:500;opacity:.55;margin-inline-start:6px;vertical-align:middle}
+.stsel{font:inherit;font-size:13px;padding:5px 8px;border-radius:9px;border:1px solid var(--glass-line,var(--line));background:var(--inp,var(--surface2));color:var(--fg);min-height:32px;max-width:190px;border-inline-start:4px solid var(--c,#a3aab8)}
+.stsel[data-st=won]{--c:#3f9b6b}.stsel[data-st=quote]{--c:#B8955C}.stsel[data-st=sample]{--c:#A65F2D}.stsel[data-st=lost]{--c:#c0504d}.stsel[data-st=replied]{--c:#4f8fc4}.stsel[data-st=contacted]{--c:#6f86b0}
+.rowact{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+details.pf>summary{cursor:pointer;list-style:none;margin-bottom:10px}details.pf>summary::-webkit-details-marker{display:none}
+details.pf>summary::after{content:' ▾';opacity:.6}details.pf:not([open])>summary::after{content:' ▸'}
+.pf{margin-bottom:14px}.pftiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.pftile{font:inherit;color:var(--fg);text-align:start;cursor:pointer;display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:12px;border:1px solid var(--glass-line,var(--line));border-inline-start:5px solid var(--c);background:var(--inp,var(--surface2))}
+.pftile b{font-size:24px;line-height:1.1}.pftile span{font-size:12px;opacity:.85}
+.pfmain{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center}
+.donut{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;-webkit-mask:radial-gradient(circle,transparent 52%,#000 53%);mask:radial-gradient(circle,transparent 52%,#000 53%);position:relative}
+.donutwrap{position:relative;width:150px;height:150px}.donutc{position:absolute;inset:0;display:grid;place-content:center;text-align:center}.donutc b{font-size:26px;line-height:1}.donutc small{opacity:.7;font-size:12px}
+.pflegend{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
+.pflegend button{font:inherit;color:var(--fg);background:none;border:0;cursor:pointer;display:grid;grid-template-columns:12px 1fr auto auto;gap:6px;align-items:center;padding:4px 2px;text-align:start;font-size:13px;border-radius:8px}
+.pflegend button:hover{background:var(--inp,var(--surface2))}.pflegend i{width:10px;height:10px;border-radius:3px;display:block}.pflegend small{opacity:.65;min-width:30px;text-align:end}
+.pfcats{margin-top:12px;display:flex;flex-direction:column;gap:8px}.pfrow{display:grid;grid-template-columns:110px 1fr;gap:10px;align-items:center;font-size:13px}
+.pfbar{display:flex;height:12px;border-radius:99px;overflow:hidden;background:var(--surface2);gap:2px}.pfbar i{display:block;min-width:6px}
+@media (max-width:700px){.pftiles{grid-template-columns:repeat(2,1fr)}.pfmain{grid-template-columns:1fr;justify-items:center}.pflegend{grid-template-columns:1fr 1fr;width:100%}.pfrow{grid-template-columns:84px 1fr}}
+
+.lk{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.lk:empty{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:8px 14px;border-radius:10px;cursor:pointer;font-weight:500;min-height:40px;white-space:nowrap}
+.btn:hover{border-color:var(--gold)}
+.btn.primary{background:var(--accent);color:var(--accent-fg);border-color:transparent;font-weight:600}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent}
+.btn.danger{color:var(--bad)}
+.btn.sm{padding:4px 10px;min-height:32px;font-size:13px;border-radius:8px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.grid{display:grid;gap:14px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow);min-width:0}
+.card h2{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.kpi small{display:block;color:var(--muted);font-size:12.5px}
+.kpi b{display:block;font-size:26px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.3}
+.kpi span{font-size:12.5px;color:var(--muted)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:14px;margin-top:14px}
+.row{display:flex;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line);flex-wrap:wrap}
+.row:first-of-type{border-top:0}
+.row .grow{flex:1;min-width:140px}
+.row .t{font-weight:600}
+.row .s{color:var(--muted);font-size:13px}
+.chip{display:inline-flex;align-items:center;gap:4px;padding:1px 9px;border-radius:99px;font-size:12px;font-weight:600;background:var(--info-bg);color:var(--fg);white-space:nowrap}
+.chip.good{background:var(--good-bg);color:var(--good)} .chip.warn{background:var(--warn-bg);color:var(--warn)} .chip.bad{background:var(--bad-bg);color:var(--bad)}
+.empty{padding:26px 12px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--fg);margin-bottom:4px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.filters input,.filters select,.field input,.field select,.field textarea,.inp{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-height:40px;width:100%}
+.filters input{flex:1;min-width:180px;width:auto}.filters select{width:auto;min-width:130px}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block;text-align:start}
+.funnel{display:flex;flex-direction:column;gap:7px}
+.funnel div{display:grid;grid-template-columns:96px 1fr 34px;gap:10px;align-items:center;font-size:13px}
+.funnel i{display:block;height:9px;border-radius:99px;background:var(--surface2);overflow:hidden}
+.funnel i u{display:block;height:100%;background:var(--gold);border-radius:99px;text-decoration:none}
+.funnel b{font-variant-numeric:tabular-nums;text-align:end}
+.tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.tabs button{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:5px 14px;cursor:pointer;font-weight:500}
+.tabs button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.msg{white-space:pre-wrap;background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:14px;direction:ltr;text-align:left;line-height:1.6;unicode-bidi:plaintext}
+.num{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate;display:inline-block}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:end;margin-bottom:14px}
+.bottom{display:none}
+.banner{background:var(--warn-bg);color:var(--warn);border-radius:10px;padding:8px 12px;margin-bottom:14px;font-size:13.5px}
+/* modal */
+.scrim{position:fixed;inset:0;background:rgba(4,10,22,.55);z-index:50;display:flex;align-items:flex-start;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) 16px 16px;overflow:auto}
+.modal{background:var(--surface);border:1px solid var(--line);border-radius:16px;width:min(680px,100%);margin-block:auto;box-shadow:var(--shadow)}
+.modal header{display:flex;align-items:center;gap:10px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.modal header h3{flex:1;font-size:17px}
+.modal .body{padding:16px 18px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.modal footer{display:flex;gap:8px;padding:14px 18px;border-top:1px solid var(--line);flex-wrap:wrap}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field.span2{grid-column:1/-1}
+.field label{font-size:12.5px;color:var(--muted);font-weight:500}
+.field textarea{min-height:100px;resize:vertical}
+.field.check{flex-direction:row;align-items:center;gap:8px}
+.field.check input{width:auto;min-height:0}
+.field input[dir=ltr],.field textarea[dir=ltr]{text-align:left}
+.preview{grid-column:1/-1;background:var(--surface2);border-radius:10px;padding:10px 14px;font-size:13.5px}
+.preview b{font-variant-numeric:tabular-nums}
+#toast{position:fixed;inset-inline:0;bottom:calc(76px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;pointer-events:none;z-index:80}
+#toast div{background:var(--fg);color:var(--bg);padding:9px 16px;border-radius:99px;font-size:14px;box-shadow:var(--shadow)}
+.help{color:var(--muted);font-size:13px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px}
+@media (max-width:899px){
+  .app{grid-template-columns:minmax(0,1fr)}
+  .side{display:none}
+  main{padding:16px 16px 96px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .top h1{font-size:21px}
+  .bottom{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;inset-inline:0;bottom:0;background:var(--nav-bg);padding:6px max(6px,env(safe-area-inset-left,0px)) calc(6px + env(safe-area-inset-bottom,0px));z-index:40}
+  .bottom button{background:none;border:0;color:var(--nav-fg);display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;padding:6px 2px;cursor:pointer;position:relative}
+  .bottom button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .bottom button[aria-current="page"]{color:var(--nav-active)}
+  .bottom .badge{position:absolute;top:0;inset-inline-end:22%;background:#D9C197;color:#0A1A3A;border-radius:99px;font-size:10px;font-weight:700;padding:0 5px}
+  .btn.sm{min-height:38px;padding:6px 12px}
+  .btn{min-height:44px}
+  .scrim{padding:0;align-items:stretch}
+  .modal{width:100%;border-radius:0;border:0;margin:0;min-height:100%;display:flex;flex-direction:column}
+  .modal header{position:sticky;top:0;background:var(--surface);z-index:2;padding-top:calc(14px + env(safe-area-inset-top,0px))}
+  .modal .body{flex:1;align-content:start;grid-template-columns:minmax(0,1fr);padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+  .modal footer{position:sticky;bottom:0;background:var(--surface);z-index:2;padding-bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+  #toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  .field.span2{grid-column:auto}
+  .funnel div{grid-template-columns:78px 1fr 30px}
+}
+@media (prefers-reduced-motion:no-preference){.card,.btn{transition:border-color .15s,filter .15s}}
+
+/* glass morphism: translucent surfaces over a soft colour backdrop */
+.backdrop{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.backdrop i{position:absolute;border-radius:50%}
+.backdrop i:nth-child(1){width:70vmax;height:70vmax;top:-26vmax;inset-inline-start:-18vmax;background:radial-gradient(circle,var(--b1),transparent 66%)}
+.backdrop i:nth-child(2){width:62vmax;height:62vmax;bottom:-24vmax;inset-inline-end:-16vmax;background:radial-gradient(circle,var(--b2),transparent 66%)}
+.backdrop i:nth-child(3){width:52vmax;height:52vmax;top:28vh;inset-inline-start:34vw;background:radial-gradient(circle,var(--b3),transparent 66%)}
+.app{position:relative;z-index:1}
+.card,.modal,.side,.bottom,.btn,.filters input,.filters select,.field input,.field select,.field textarea,.inp,.tabs button,.preview,.msg{-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%)}
+.card{background:var(--glass);border-color:var(--glass-line);box-shadow:var(--glass-shadow)}
+.modal{background:var(--glass-strong);border-color:var(--glass-line);box-shadow:var(--glass-shadow),0 24px 60px rgba(0,0,0,.25);-webkit-backdrop-filter:blur(26px) saturate(160%);backdrop-filter:blur(26px) saturate(160%)}
+.scrim{background:rgba(4,10,22,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.side{background:var(--nav-bg);border-inline-end:1px solid rgba(255,255,255,.08)}
+.bottom{border-top:1px solid rgba(255,255,255,.1)}
+.btn,.tabs button{background:var(--inp);border-color:var(--glass-line)}
+.btn.primary{background:var(--accent);backdrop-filter:none;-webkit-backdrop-filter:none}
+.tabs button[aria-pressed="true"]{background:var(--fg)}
+.filters input,.filters select,.field input,.field select,.field textarea,.inp{background:var(--inp);border-color:var(--glass-line)}
+.preview,.msg{background:var(--inp)}
+.chip{background:var(--info-bg)}
+.modal header,.modal footer{border-color:var(--glass-line)}
+.row{border-top-color:var(--glass-line)}
+.card,.modal{background-clip:padding-box}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.card{background:var(--surface)}.modal{background:var(--surface)}.side,.bottom{background:var(--nav-bg)}}
+@media (prefers-reduced-transparency:reduce){.card,.modal,.side,.bottom,.btn,.inp,.filters input,.filters select,.field input,.field select,.field textarea,.tabs button,.preview,.msg,.scrim{-webkit-backdrop-filter:none;backdrop-filter:none}.card,.modal{background:var(--surface)}.side,.bottom{background:#0A1A3A}.scrim{background:rgba(4,10,22,.6)}}
+@media (max-width:899px){.card,.btn,.filters input,.filters select,.inp,.tabs button{-webkit-backdrop-filter:blur(10px) saturate(140%);backdrop-filter:blur(10px) saturate(140%)}.modal header,.modal footer{background:var(--glass-strong)!important;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}}
+
+/* message center */
+.mc{display:grid;grid-template-columns:minmax(260px,340px) 1fr;gap:12px;align-items:start}
+.mcrows{display:flex;flex-direction:column;gap:6px;max-height:70vh;overflow:auto}
+.mcrow{display:flex;flex-direction:column;gap:6px;text-align:start;width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line,rgba(255,255,255,.12));background:transparent;color:inherit;font:inherit;cursor:pointer}
+.mcrow.on{border-color:var(--gold,#B8955C);background:rgba(184,149,92,.12)}
+.mcrow .mct{display:flex;flex-direction:column}.mcrow small{opacity:.7}
+.mcm{display:flex;gap:4px;flex-wrap:wrap}
+.mcback{display:none}
+.mcwhy{display:flex;gap:4px;flex-wrap:wrap;align-items:center;font-size:12px;margin:6px 0}
+.mcqc{display:flex;gap:4px;flex-wrap:wrap;margin:8px 0}
+.mcact{display:flex;gap:8px;flex-wrap:wrap}
+.mced textarea{min-height:200px;line-height:1.55}
+@media(max-width:820px){.mc{grid-template-columns:1fr}.mc .mcpane{display:none}.mc.ed .mclist{display:none}.mc.ed .mcpane{display:block}.mcback{display:inline-flex}.mcrows{max-height:none}}
+.stbar{display:flex;flex-wrap:wrap;gap:4px}
+.stb{font:inherit;font-size:12px;padding:5px 10px;min-height:32px;border-radius:999px;border:1px solid var(--glass-line,var(--line));background:transparent;color:var(--fg);cursor:pointer;border-inline-start:4px solid var(--c)}
+.stb.on{background:var(--c);color:#fff;border-color:var(--c);font-weight:600}
+.rowact{flex-wrap:wrap}.rowact .stbar{flex:1 1 100%;margin-bottom:4px}
+.geo{margin:0 0 10px}.geolab{font-size:12px;opacity:.7;margin:6px 0 4px}
+.geobar{display:flex;flex-wrap:wrap;gap:6px}
+.gchip{font:inherit;font-size:13px;padding:5px 11px;min-height:34px;border-radius:999px;border:1px solid var(--glass-line,var(--line));background:transparent;color:var(--fg);cursor:pointer}
+.gchip i{font-style:normal;opacity:.65;font-size:11px;margin-inline-start:3px}
+.gchip.on{background:#0A1A3A;color:#F5F3EE;border-color:#B8955C}.gchip.on i{opacity:.85}
+.geostat{margin:4px 0 10px;padding:8px 12px;border-radius:12px;background:rgba(184,149,92,.14);font-size:13px}
+</style>
+<div class="backdrop" aria-hidden="true"><i></i><i></i><i></i></div>
+</head><body><script>window.LM_TARGET="pages"</script><div class="app" id="app">
+  <aside class="side" id="side"></aside>
+  <main>
+    <div id="banner"></div>
+    <div class="top"><h1 id="title"></h1><div class="tools" id="tools"></div></div>
+    <section id="view" aria-live="polite"></section>
+  </main>
+  <nav class="bottom" id="bottom" aria-label="Main"></nav>
+</div>
+<div id="modal-root"></div>
+<div id="toast" aria-live="polite"></div>
+<script>
+const T={
+fa:{
+ nav_today:'امروز',nav_leads:'لیدها',nav_mail:'ارتباط',nav_projects:'پروژه‌ها',nav_fin:'مالی',nav_set:'تنظیمات',
+ sub:'ESTATE FILMS',
+ today:'امروز',due:'پیگیری‌های سررسیده',ready:'آمادهٔ اولین پیام',replies:'پاسخ‌های اخیر',sent_today:'ارسال امروز',
+ k_leads:'کل لیدها',k_contacted:'تماس گرفته‌شده',k_reply:'نرخ پاسخ',k_sample:'نمونه فرستاده‌شده',k_won:'مشتری شده',k_rev:'درآمد خالص (ماه)',
+ funnel:'قیف فروش',nothing_due:'امروز پیگیری سررسید‌شده‌ای نیست.',nothing_ready:'لید آمادهٔ ارسال نیست. لید تازه اضافه یا ایمپورت کنید.',nothing_replies:'هنوز پاسخی ثبت نشده.',
+ open:'باز کردن',add_lead:'لید جدید',import:'ایمپورت',export:'خروجی',search:'جستجو…',all:'همه',all_markets:'همهٔ بازارها',
+ seg:'بخش',seg_agent:'آژانس (ویدیو)',seg_host:'میزبان (۳بعدی/ویدیو)',
+ stage:'مرحله',st_new:'جدید',st_researched:'بررسی‌شده',st_contacted:'پیام فرستاده شد',st_replied:'پاسخ داد',st_sample:'در حال بررسی محصول',st_quote:'در حال بستن قرارداد',st_won:'فروخته شد',st_lost:'نشد (رد کرد)',
+ dnc:'ایمیل نزن',verified:'تأییدشده',unverified:'تأییدنشده',
+ name:'نام (آژانس/ملک)',contact:'نام مخاطب',email:'ایمیل',phone:'تلفن',ig:'اینستاگرام',site:'وب‌سایت',market:'بازار / شهر',size:'اندازه / نوع',score:'امتیاز تناسب (۱ تا ۵)',
+ channel:'کانال ارتباط',ch_email:'ایمیل',ch_instagram:'اینستاگرام',ch_airbnb:'پیام Airbnb',ch_booking:'پیام Booking',platform:'پلتفرم',listing:'لینک آگهی',source:'منبع اطلاعات',notes:'یادداشت',
+ is_verified:'اطلاعات تماس از منبع واقعی تأیید شده',is_dnc:'ایمیل نزن (لغو اشتراک یا ردشده)',
+ save:'ذخیره',cancel:'انصراف',delete:'حذف',close:'بستن',edit:'ویرایش',confirm_del:'مطمئنید؟ دوباره بزنید تا حذف شود.',
+ empty_leads:'هنوز لیدی ندارید',empty_leads_s:'از «لید جدید» یا «ایمپورت» شروع کنید.',
+ mail:'ارتباط',q_queue:'صف ارسال',q_tpl:'قالب‌ها',q_log:'سابقه',
+ step:'مرحله',of:'از',msg_for:'پیام برای',subject:'موضوع',body:'متن',
+ open_gmail:'باز کردن در Gmail',copy:'کپی',copy_subject:'کپی موضوع',copy_body:'کپی متن',copied:'کپی شد',mark_sent:'ارسال شد (ثبت کن)',log_reply:'ثبت پاسخ',
+ pick_lead:'یک لید را از فهرست انتخاب کنید.',queue_help:'ابتدا پیام را در Gmail یا اپ مربوط ارسال کنید، سپس «ارسال شد» را بزنید تا ثبت و پیگیری زمان‌بندی شود. پنل خودش چیزی نمی‌فرستد.',
+ sent_logged:'ثبت شد',
+ r_interested:'علاقه‌مند',r_question:'سؤال دارد',r_no:'علاقه ندارد',r_unsub:'لغو اشتراک',r_note:'یادداشت پاسخ',
+ tpl_edit:'ویرایش قالب',tpl_reset:'بازگشت به پیش‌فرض',tpl_vars:'متغیرها: {{greet}} {{name}} {{agency}} {{market}} {{sender}} {{brand}} {{listing}}',tpl_custom:'ویرایش‌شده',
+ log_empty:'سابقه‌ای نیست.',lg_email_sent:'پیام ارسال شد',lg_reply:'پاسخ',lg_stage:'تغییر مرحله',lg_note:'یادداشت',
+ projects:'پروژه‌ها',add_project:'پروژهٔ جدید',pj_title:'عنوان پروژه',pj_status:'وضعیت',pj_price:'مبلغ',pj_cur:'ارز',pj_due:'سررسید',pj_url:'لینک تحویل',pj_lead:'مشتری',
+ ps_intake:'دریافت اطلاعات',ps_photos:'عکس‌ها رسید',ps_editing:'در حال تولید',ps_review:'بازبینی مشتری',ps_delivered:'تحویل شد',ps_paid:'پرداخت شد',
+ ck_form:'فرم ورودی پر شد',ck_photos:'عکس‌ها با اجازهٔ مشتری دریافت شد',ck_music:'موسیقی انتخاب و لایسنس چک شد',ck_draft:'پیش‌نویس فرستاده شد',ck_final:'نسخهٔ نهایی تحویل شد',
+ empty_pj:'پروژه‌ای نیست',empty_pj_s:'وقتی مشتری جواب مثبت داد، پروژه بسازید.',
+ fin:'مالی',add_pay:'دریافتی جدید',rate:'نرخ تتر (تومان)',rate_upd:'آخرین به‌روزرسانی نرخ',rate_save:'ثبت نرخ',rate_note:'نرخ را دستی وارد کنید. اتصال زنده به نرخ بازار داخل این صفحه ممکن نیست.',
+ p_date:'تاریخ',p_status:'وضعیت',pst_pending:'در انتظار',pst_received:'دریافت شد',p_cur:'ارز قرارداد',p_inv:'مبلغ فاکتور (ارز قرارداد)',p_fx:'نرخ ارز قرارداد به دلار',p_gross:'USDT رسیده از درگاه',p_feemode:'نوع کارمزد صرافی',fm_usdt:'مبلغ ثابت (USDT)',fm_pct:'درصد',p_fee:'کارمزد صرافی',p_rate:'نرخ تتر در زمان دریافت (تومان)',p_method:'درگاه / صرافی',p_tx:'شناسهٔ تراکنش',p_receipt:'فیش / اسکرین‌شات',p_view_receipt:'دیدن فیش',
+ net:'خالص (USDT)',fee:'کارمزد',toman:'معادل تومان',toman_now:'ارزش امروز',leak:'اختلاف با فاکتور',
+ t_net:'مجموع خالص USDT',t_toman:'مجموع تومان (نرخ روز دریافت)',t_fee:'مجموع کارمزد',t_pending:'در انتظار پرداخت',this_month:'این ماه',all_time:'کل دوران',
+ empty_pay:'دریافتی ثبت نشده',empty_pay_s:'پس از واریز، مبلغ و کارمزد صرافی را اینجا ثبت کنید.',
+ settings:'تنظیمات',s_sender:'نام فرستنده',s_email:'ایمیل فرستنده',s_brand:'نام برند',s_limit:'سقف ارسال روزانه',s_gap1:'فاصلهٔ پیگیری اول (روز)',s_gap2:'فاصلهٔ پیگیری دوم (روز)',
+ s_lang:'زبان',s_theme:'پوسته',th_auto:'خودکار',th_light:'روشن',th_dark:'تیره',
+ backup:'پشتیبان‌گیری',b_export:'خروجی JSON (همهٔ داده)',b_import:'بازیابی از JSON',b_csv_leads:'خروجی CSV لیدها',b_csv_pay:'خروجی CSV مالی',
+ app:'نصب روی دسکتاپ و موبایل',app_dl:'دانلود نسخهٔ مستقل (فایل HTML)',app_help:'نسخهٔ آنلاین (همین صفحه) داده‌ها را بین گوشی و کامپیوتر هم‌گام نگه می‌دارد. روی موبایل لینک را باز کنید و از منوی مرورگر «Add to Home Screen» را بزنید. نسخهٔ دانلودی داده‌ها را فقط داخل همان مرورگر نگه می‌دارد؛ با JSON جابه‌جا کنید.',
+ local_mode:'حالت محلی: داده‌ها فقط در همین مرورگر ذخیره می‌شوند. برای هم‌گام‌سازی، پنل را از لینک آنلاین باز کنید.',
+ loading:'در حال اتصال…',saved:'ذخیره شد',deleted:'حذف شد',err:'خطا',imported:'ایمپورت شد',skipped:'تکراری',
+ imp_title:'ایمپورت لید',imp_help:'فایل CSV را انتخاب کنید یا متن را جای‌گذاری کنید. ردیف اول باید عنوان ستون‌ها باشد (name, category [agency/airbnb/booking], email, website, instagram, market, country, currency, nightlyUsd, photos, size, notes, listingUrl, contactName, phone, verified).',imp_paste:'متن CSV',imp_file:'فایل CSV',imp_run:'ایمپورت',
+ days:'روز',ago:'پیش',today_l:'امروز',overdue:'سررسید',next:'پیگیری بعدی',none:'—',
+ no_contact:'راه تماس ندارد',need_email:'ایمیل معتبر ندارد'
+},
+en:{
+ nav_today:'Today',nav_leads:'Leads',nav_mail:'Outreach',nav_projects:'Projects',nav_fin:'Finance',nav_set:'Settings',
+ sub:'ESTATE FILMS',
+ today:'Today',due:'Follow-ups due',ready:'Ready for first message',replies:'Recent replies',sent_today:'Sent today',
+ k_leads:'Total leads',k_contacted:'Contacted',k_reply:'Reply rate',k_sample:'Samples sent',k_won:'Clients won',k_rev:'Net revenue (month)',
+ funnel:'Pipeline',nothing_due:'No follow-ups due today.',nothing_ready:'No lead is ready to send. Add or import new leads.',nothing_replies:'No replies logged yet.',
+ open:'Open',add_lead:'New lead',import:'Import',export:'Export',search:'Search…',all:'All',all_markets:'All markets',
+ seg:'Segment',seg_agent:'Agent (video)',seg_host:'Host (3D/video)',
+ stage:'Stage',st_new:'New',st_researched:'Researched',st_contacted:'Contacted',st_replied:'Replied',st_sample:'Reviewing product',st_quote:'Closing deal',st_won:'Sold',st_lost:'Not sold',
+ dnc:'Do not contact',verified:'Verified',unverified:'Unverified',
+ name:'Name (agency/property)',contact:'Contact name',email:'Email',phone:'Phone',ig:'Instagram',site:'Website',market:'Market / city',size:'Size / type',score:'Fit score (1-5)',
+ channel:'Channel',ch_email:'Email',ch_instagram:'Instagram',ch_airbnb:'Airbnb message',ch_booking:'Booking message',platform:'Platform',listing:'Listing URL',source:'Data source',notes:'Notes',
+ is_verified:'Contact data confirmed from a real source',is_dnc:'Do not contact (unsubscribed or declined)',
+ save:'Save',cancel:'Cancel',delete:'Delete',close:'Close',edit:'Edit',confirm_del:'Sure? Press again to delete.',
+ empty_leads:'No leads yet',empty_leads_s:'Start with "New lead" or "Import".',
+ mail:'Outreach',q_queue:'Send queue',q_tpl:'Templates',q_log:'History',
+ step:'Step',of:'of',msg_for:'Message for',subject:'Subject',body:'Body',
+ open_gmail:'Open in Gmail',copy:'Copy',copy_subject:'Copy subject',copy_body:'Copy body',copied:'Copied',mark_sent:'Sent (log it)',log_reply:'Log reply',
+ pick_lead:'Pick a lead from the list.',queue_help:'Send the message in Gmail or the platform first, then press "Sent" to log it and schedule the follow-up. The panel sends nothing by itself.',
+ sent_logged:'Logged',
+ r_interested:'Interested',r_question:'Has a question',r_no:'Not interested',r_unsub:'Unsubscribe',r_note:'Reply note',
+ tpl_edit:'Edit template',tpl_reset:'Reset to default',tpl_vars:'Variables: {{greet}} {{name}} {{agency}} {{market}} {{sender}} {{brand}} {{listing}} {{hook}} {{offer}} {{place}} {{property}} {{feat}} {{proof}} {{price}}',tpl_custom:'edited',
+ log_empty:'No history yet.',lg_email_sent:'Message sent',lg_reply:'Reply',lg_stage:'Stage change',lg_note:'Note',
+ projects:'Projects',add_project:'New project',pj_title:'Project title',pj_status:'Status',pj_price:'Price',pj_cur:'Currency',pj_due:'Due',pj_url:'Delivery link',pj_lead:'Client',
+ ps_intake:'Intake',ps_photos:'Photos in',ps_editing:'In production',ps_review:'Client review',ps_delivered:'Delivered',ps_paid:'Paid',
+ ck_form:'Intake form filled',ck_photos:'Photos received with client permission',ck_music:'Music chosen and licence checked',ck_draft:'Draft sent',ck_final:'Final delivered',
+ empty_pj:'No projects',empty_pj_s:'Create a project when a client says yes.',
+ fin:'Finance',add_pay:'New payment',rate:'USDT rate (Toman)',rate_upd:'Rate last updated',rate_save:'Save rate',rate_note:'Enter the rate by hand. A live market feed cannot be reached from this page.',
+ p_date:'Date',p_status:'Status',pst_pending:'Pending',pst_received:'Received',p_cur:'Contract currency',p_inv:'Invoice amount (contract currency)',p_fx:'Contract currency to USD rate',p_gross:'USDT arrived from gateway',p_feemode:'Exchange fee type',fm_usdt:'Fixed (USDT)',fm_pct:'Percent',p_fee:'Exchange fee',p_rate:'USDT rate at receipt (Toman)',p_method:'Gateway / exchange',p_tx:'Transaction ID',p_receipt:'Receipt / screenshot',p_view_receipt:'View receipt',
+ net:'Net (USDT)',fee:'Fee',toman:'Toman value',toman_now:'Value today',leak:'Gap vs invoice',
+ t_net:'Total net USDT',t_toman:'Total Toman (rate at receipt)',t_fee:'Total fees',t_pending:'Awaiting payment',this_month:'This month',all_time:'All time',
+ empty_pay:'No payments logged',empty_pay_s:'After a transfer lands, log the amount and exchange fee here.',
+ settings:'Settings',s_sender:'Sender name',s_email:'Sender email',s_brand:'Brand name',s_limit:'Daily send limit',s_gap1:'First follow-up gap (days)',s_gap2:'Second follow-up gap (days)',
+ s_lang:'Language',s_theme:'Theme',th_auto:'Auto',th_light:'Light',th_dark:'Dark',
+ backup:'Backup',b_export:'Export JSON (all data)',b_import:'Restore from JSON',b_csv_leads:'Leads CSV',b_csv_pay:'Finance CSV',
+ app:'Install on desktop and phone',app_dl:'Download standalone copy (HTML file)',app_help:'The online version (this page) keeps data in sync between phone and computer. On a phone, open the link and use the browser menu "Add to Home Screen". The downloaded copy stores data only in that browser; move data with JSON.',
+ local_mode:'Local mode: data is stored in this browser only. Open the online link to sync.',
+ loading:'Connecting…',saved:'Saved',deleted:'Deleted',err:'Error',imported:'Imported',skipped:'duplicates',
+ imp_title:'Import leads',imp_help:'Choose a CSV file or paste text. First row must be column headers (name, category [agency/airbnb/booking], email, website, instagram, market, country, currency, nightlyUsd, photos, size, notes, listingUrl, contactName, phone, verified).',imp_paste:'CSV text',imp_file:'CSV file',imp_run:'Import',
+ days:'d',ago:'ago',today_l:'today',overdue:'overdue',next:'Next follow-up',none:'—',
+ no_contact:'No contact route',need_email:'No valid email'
+}};
+const STAGES=['new','researched','contacted','replied','sample','quote','won','lost'];
+const PSTAT=['intake','photos','editing','review','delivered','paid'];
+const CHECKS=['form','photos','music','draft','final'];
+const CURS=['USD','EUR','GBP','AED','CHF','USDT'];
+const DEFAULT_TPL={
+agent_email_1:{subject:'A free short video for one of your {{market}} listings',body:`{{greet}}
+
+I'm {{sender}} from {{brand}}. We make short vertical videos (Reels / TikTok / Shorts, 20-30 seconds) from a property's photos: edited, set to music and carrying your branding.
+
+We are a new, small studio working remotely, so I'd like to earn your trust first. If you reply with a link to one listing and confirm I may use its public photos, I'll send you a finished sample within 48 hours. It is for your review only and I won't publish it.
+
+{{offer}} If it's not for you, no problem at all.
+
+Best regards,
+{{sender}}
+{{brand}}
+
+If you'd rather not hear from me, just reply "no" and I won't contact you again.`},
+agent_email_2:{subject:'Re: A free short video for one of your {{market}} listings',body:`{{greet}}
+
+Just checking my note didn't get buried. The offer stands: one free 20-30 second sample from a listing of your choice, so you can judge the quality before deciding anything.
+
+Best,
+{{sender}}
+{{brand}}
+
+Reply "no" and I won't write again.`},
+agent_email_3:{subject:'Last note: sample video for {{agency}}',body:`{{greet}}
+
+This is my last message. If short vertical video is something {{agency}} might want, reply with a listing link and I'll make the sample. If not, I wish you a great season.
+
+{{sender}}
+{{brand}}`},
+agent_instagram_1:{subject:'',body:`Hi {{name}}, I'm {{sender}} from {{brand}}. We make short vertical property videos (Reels/TikTok format) from listing photos. Happy to make you a free 20-30s sample from one of your listings so you can judge the quality. {{offer}} Would that be useful?`},
+agent_dm_2:{subject:'',body:`Hi {{name}}, a quick follow-up on my note. The free sample offer is still open. No pressure either way.`},
+host_email_1:{subject:'A short video tour of your rental, made from your photos',body:`{{greet}}
+
+I'm {{sender}} from {{brand}}. We turn a rental's own photos into a short video tour (and, as a pilot, a 3D walkthrough) that you can use on your listing and social channels.
+
+This is not a booking enquiry. {{hook}}
+
+I'd be glad to make a free sample for your listing so you can see the result before deciding anything. {{offer}} Reply "yes" and I'll tell you what I need.
+
+Best regards,
+{{sender}}
+{{brand}}
+
+If you'd rather not hear from me, reply "no" and I won't contact you again.`},
+host_email_2:{subject:'Re: A short video tour of your rental',body:`{{greet}}
+
+Following up on my note. The free sample is still on offer. Just reply "yes" and I'll explain the next step.
+
+{{sender}}
+{{brand}}`},
+host_email_3:{subject:'Last note about your rental video',body:`{{greet}}
+
+My last message. If a video tour of your property would help your bookings, reply and I'll make a free sample. Otherwise, all the best with the season.
+
+{{sender}}
+{{brand}}`},
+host_airbnb_1:{subject:'',body:`Hello {{name}}, I'm {{sender}} from {{brand}}. To be upfront: this is not a booking enquiry. {{hook}} I make short video tours (and pilot 3D walkthroughs) from the host's own photos, and I'd be happy to make one free sample for your listing so you can judge the quality. {{offer}} If you're not interested, please just ignore this message.`},
+host_booking_1:{subject:'',body:`Hello {{name}}, I'm {{sender}} from {{brand}}. This is not a booking request. {{hook}} I make short video tours (and pilot 3D walkthroughs) from the host's own photos, and I can make a free sample for your property. {{offer}} If it isn't of interest, please ignore this message.`},
+host_instagram_1:{subject:'',body:`Hi {{name}}, I'm {{sender}} from {{brand}}. I make short video tours of rentals from the host's own photos. {{hook}} Happy to make a free sample so you can judge the quality. {{offer}} Interested?`},
+host_dm_2:{subject:'',body:`Hello {{name}}, a quick follow-up on my message. The free sample is still on offer. No pressure either way.`}
+};
+
+Object.assign(T.fa,{inst_title:'نصب و همگام‌سازی دستگاه‌ها',inst_btn:'نصب به‌صورت اپ',inst_done:'روی این دستگاه به‌صورت اپ نصب شده است',inst_ios:'در Safari: دکمهٔ Share و بعد Add to Home Screen',inst_other:'از منوی مرورگر گزینهٔ Install app یا Add to Home screen را بزنید',sync_btn:'لینک و کد QR نسخهٔ آنلاین',sync_title:'باز کردن نسخهٔ آنلاین روی دستگاه دیگر',sync_help:'کد را با دوربین گوشی اسکن کنید یا لینک را باز کنید. با همین حساب Claude وارد شوید؛ لیدها و مالی بین همهٔ دستگاه‌ها خودکار هم‌گام است.',sync_copy:'کپی لینک',sync_open:'باز کردن',qr_fail:'کد QR بارگذاری نشد؛ از لینک استفاده کنید.',go_online:'باز کردن نسخهٔ آنلاین'});
+Object.assign(T.en,{inst_title:'Install and sync devices',inst_btn:'Install as app',inst_done:'Installed as an app on this device',inst_ios:'In Safari: Share button, then Add to Home Screen',inst_other:'Use the browser menu: Install app or Add to Home screen',sync_btn:'Online link and QR code',sync_title:'Open the online panel on another device',sync_help:'Scan the code with the phone camera or open the link. Sign in with the same Claude account; leads and finance sync across all devices automatically.',sync_copy:'Copy link',sync_open:'Open',qr_fail:'QR code did not load; use the link.',go_online:'Open online version'});
+
+Object.assign(T.fa,{category:'دسته',cat_agency:'آژانس املاک',cat_airbnb:'Airbnb',cat_booking:'Booking',country:'کشور',currency:'ارز',nightly:'قیمت هر شب (دلار)',photos_n:'تعداد عکس‌های آگهی',night:'شب',fit_ok:'مطابق معیار',fit_no:'نامطابق',fit_unk:'اطلاعات ناقص',s_minnight:'حداقل قیمت شبانه (دلار)',
+ crit_title:'معیار لید Airbnb و Booking',crit_1:'منطقه در اروپا و پرتوریست باشد.',crit_2:'ارز آگهی معتبر باشد',crit_3:'قیمت اجارهٔ یک شب بیشتر از {n} دلار باشد.',crit_4:'میزبان مستقل با تعداد کم ملک (خودش تصمیم بگیرد)؛ عکس‌ها ضعیف و بدون ویدیو.',crit_regions:'نمونه مناطق: آلگاروه، کوستا دل سول، مایورکا، ایبیزا، توسکانی، ساحل آمالفی، دریاچهٔ کومو، کوت دازور، پروانس، سانتورینی و میکونوس، دوبرونیک و اسپلیت. مطابق معیار بودن فقط وقتی سبز می‌شود که قیمت، کشور و ارز را پر کرده باشید.'});
+Object.assign(T.en,{category:'Category',cat_agency:'Real-estate agency',cat_airbnb:'Airbnb',cat_booking:'Booking',country:'Country',currency:'Currency',nightly:'Nightly price (USD)',photos_n:'Listing photo count',night:'night',fit_ok:'Meets criteria',fit_no:'Fails criteria',fit_unk:'Incomplete data',s_minnight:'Minimum nightly price (USD)',
+ crit_title:'Airbnb and Booking lead criteria',crit_1:'Region in Europe and a strong tourist area.',crit_2:'Listing currency is a reputable one',crit_3:'Nightly rate above {n} USD.',crit_4:'Independent host with few properties (decides alone); weak photos and no video.',crit_regions:'Example regions: Algarve, Costa del Sol, Mallorca, Ibiza, Tuscany, Amalfi Coast, Lake Como, C\u00f4te d\'Azur, Provence, Santorini and Mykonos, Dubrovnik and Split. "Meets criteria" turns green only when price, country and currency are filled in.'});
+
+Object.assign(T.fa,{chance:'شانس',independent:'آژانس مستقل است؟',video_q:'کیفیت ویدیوی فعلی',unknown:'نامشخص',yes:'بله',no:'خیر',v_none:'ویدیو ندارد',v_weak:'ضعیف',v_good:'خوب',
+ sc_mail:'ایمیل تأییدشده',sc_mail2:'ایمیل (تأییدنشده)',sc_other:'فقط تلفن یا اینستاگرام',sc_none:'راه تماس ندارد',sc_indep:'مستقل و کوچک',sc_big:'بزرگ یا وابسته',sc_novideo:'ویدیو ندارد',sc_weak:'ویدیوی ضعیف',sc_good:'ویدیوی خوب دارد',sc_fit:'تناسب',sc_crit:'مطابق معیار',sc_nocrit:'نامطابق معیار',sc_price:'قیمت بالا',sc_stage:'پیشرفت مرحله',
+ sort_note:'مرتب‌شده بر اساس شانس تخمینی بستن قرارداد'});
+Object.assign(T.en,{chance:'Chance',independent:'Independent agency?',video_q:'Current video quality',unknown:'Unknown',yes:'Yes',no:'No',v_none:'No video',v_weak:'Weak',v_good:'Good',
+ sc_mail:'verified email',sc_mail2:'email (unverified)',sc_other:'phone or Instagram only',sc_none:'no contact route',sc_indep:'independent and small',sc_big:'large or affiliated',sc_novideo:'no video',sc_weak:'weak video',sc_good:'already has good video',sc_fit:'fit',sc_crit:'meets criteria',sc_nocrit:'fails criteria',sc_price:'high price',sc_stage:'stage progress',
+ sort_note:'Sorted by estimated chance of closing'});
+
+Object.assign(T.fa,{open_listing:'باز کردن لینک ملک',open_site:'سایت',open_browser:'باز کردن در مرورگر',access_title:'باز کردن در مرورگر و دانلود',access_help:'لینک را در مرورگر موبایل یا کامپیوتر باز کنید؛ از همان‌جا می‌توانید نسخهٔ مستقل را دانلود کنید یا Add to Home Screen بزنید.',err_write:'اگر پیام «invalid_argument» یا «not_granted» است، صفحه را با همان حساب Claude که مالک پنل است باز کنید (نه لینک عمومی/فقط‌مشاهده) و دوباره امتحان کنید.',diag_btn:'تست اتصال به دیتابیس',diag_local:'حالت لوکال: داده فقط در همین مرورگر ذخیره می‌شود. برای همگام‌سازی، نسخهٔ آنلاین را باز کنید.',diag_ok:'نوشتن و خواندن در دیتابیس درست است'});
+Object.assign(T.en,{open_listing:'Open listing',open_site:'Website',open_browser:'Open in browser',access_title:'Open in browser and download',access_help:'Open the link in your phone or computer browser; from there you can download the standalone copy or use Add to Home Screen.',err_write:'If the code is invalid_argument or not_granted, open the panel with the Claude account that owns it (not a public/view-only link) and try again.',diag_btn:'Test database connection',diag_local:'Local mode: data stays in this browser only. Open the online version to sync.',diag_ok:'Database write and read work'});
+
+Object.assign(T.fa,{msg_btn:'پیام',msg_review:'بررسی و کپی پیام',msg_custom:'متن اختصاصی',msg_hint:'متن بر پایهٔ ملک ساخته می‌شود و اینجا قابل ویرایش است. «ذخیره» فقط برای همین لید و همین مرحله نگه‌اش می‌دارد. متن را کپی کن و داخل چت خود Airbnb/Booking یا ایمیل بفرست، بعد «ارسال شد» را بزن.',msg_save:'ذخیره برای این لید',msg_reset:'بازگشت به متن پیش‌فرض',msg_prev:'قبلی',msg_next:'بعدی',msg_nosender:'نام فرستنده در تنظیمات خالی است؛ در متن به‌صورت [YOUR NAME] دیده می‌شود. اول آن را پر کنید.',
+ pf_title:'وضعیت فروش',pf_sold:'فروخته شد',pf_closing:'در حال بستن قرارداد',pf_review:'در حال بررسی محصول',pf_notsold:'نشد',pf_rate:'نرخ موفقیت (فروخته ÷ فروخته + نشده)',pf_hint:'روی هر عدد بزنید تا لیدهای همان وضعیت نمایش داده شود.',
+ s_prices:'قیمت‌ها (داخل متن پیام‌ها می‌آید)',s_prices_help:'پیشنهاد اولیهٔ من، قابل تغییر. مبنا: ویدیوی معرفی ملک با فیلم‌بردار حدود ۲۰۰ تا ۵۰۰ دلار (ریل کوتاه ۲۵۰ تا ۵۰۰ دلار) است؛ چون ما فقط از عکس‌های خود میزبان می‌سازیم و فیلم‌برداری حضوری نداریم، زیر این بازه‌ایم و یک قیمت معرفی برای مشتریان اول داریم.',s_pcur:'ارز قیمت‌ها (EUR / USD / GBP)',s_hostvideo:'تور ویدیویی میزبان: قیمت عادی',s_hostintro:'تور ویدیویی میزبان: قیمت معرفی',s_host3d:'پایلوت سه‌بعدی میزبان',s_agentreel:'آژانس: هر ریل',s_agentpack:'آژانس: بستهٔ ۴ ویدیو'});
+Object.assign(T.en,{msg_btn:'Message',msg_review:'Review and copy message',msg_custom:'Custom text',msg_hint:'The text is built from the property and can be edited here. Save keeps it for this lead and step only. Copy it into the Airbnb/Booking chat or your email, then press Sent.',msg_save:'Save for this lead',msg_reset:'Reset to default',msg_prev:'Previous',msg_next:'Next',msg_nosender:'Sender name is empty in Settings; the text shows [YOUR NAME]. Fill it in first.',
+ pf_title:'Sales status',pf_sold:'Sold',pf_closing:'Closing deal',pf_review:'Reviewing product',pf_notsold:'Not sold',pf_rate:'Win rate (sold ÷ sold + not sold)',pf_hint:'Tap any number to list the leads in that status.',
+ s_prices:'Prices (used inside the messages)',s_prices_help:'My starting proposal, editable. Benchmark: a videographer-made property video is about $200-500 (short social reel $250-500). We only work from the host\'s own photos with no on-site shoot, so we price below that range, with an introductory price for the first clients.',s_pcur:'Price currency (EUR / USD / GBP)',s_hostvideo:'Host video tour: regular price',s_hostintro:'Host video tour: introductory price',s_host3d:'Host 3D pilot',s_agentreel:'Agency: per reel',s_agentpack:'Agency: pack of 4 videos'});
+
+Object.assign(T.fa,{copy_fail:'کپی خودکار انجام نشد. متن انتخاب شد؛ دکمهٔ کپی گوشی/مرورگر را بزنید (یا نگه دارید و Copy).',link_copied:'مرورگر اجازهٔ باز کردن لینک نداد؛ لینک کپی شد، در مرورگر پیست کنید.'});
+Object.assign(T.en,{copy_fail:'Automatic copy failed. The text is selected; use your phone/browser copy (or long-press, Copy).',link_copied:'The browser blocked opening the link; it was copied, paste it into a browser.'});
+
+Object.assign(T.fa,{qc_sender:'نام فرستنده پر شده',qc_len:'طول مناسب',qc_optout:'گزینهٔ «نه» برای قطع پیام',qc_personal:'شامل جزئیات همین لید',qc_price:'قیمت ذکر شده',qc_subject:'سابجکت کوتاه',
+ r_site:'سایت/فرم تماس',r_none:'راه تماس ندارد',why_place:'مکان',why_type:'نوع',why_feat:'ویژگی',why_rev:'امتیاز/نظرات',why_compact:'ملک کوچک',why_angle:'نقطهٔ شروع',why_stills:'سایت فقط عکس دارد',why_title:'متن بر اساس این اطلاعات ساخته شده:',
+ mc_style:'سبک',var_A:'A · نمونهٔ رایگان',var_B:'B · سؤال',var_C:'C · کوتاه',mc_via:'ارسال از طریق',mc_draft:'ویرایش ذخیره‌نشده',
+ mc_help:'متن‌ها از اطلاعات خود لید ساخته می‌شوند. ویرایش دستی را «ذخیره متن» کنید تا برای همین لید بماند. قبل از ارسال، موارد زرد را بررسی کنید.',
+ mc_compose:'نوشتن پیام',mc_count:'تعداد',mc_f_todo:'آمادهٔ ارسال',mc_f_sent:'ارسال‌شده',mc_f_all:'همه',mc_list:'لیست',link_blocked_copied:'مرورگر باز کردن پنجره را مسدود کرد؛ لینک کپی شد، در مرورگر خودتان پیست کنید.',
+ mc_need_name:'اول نام فرستنده را وارد کنید (یا [YOUR NAME] را از متن پاک کنید).',angle:'نقطهٔ شروع پیام (اختیاری، انگلیسی)'});
+Object.assign(T.en,{qc_sender:'Sender name filled in',qc_len:'Good length',qc_optout:'Easy opt-out ("no")',qc_personal:'Uses this lead’s own details',qc_price:'Price mentioned',qc_subject:'Short subject',
+ r_site:'Website / contact form',r_none:'No contact route',why_place:'Place',why_type:'Type',why_feat:'Feature',why_rev:'Rating/reviews',why_compact:'Compact space',why_angle:'Opening angle',why_stills:'Site is stills only',why_title:'Text is built from:',
+ mc_style:'Style',var_A:'A · Free sample',var_B:'B · Question',var_C:'C · Short',mc_via:'Send via',mc_draft:'unsaved edit',
+ mc_help:'Texts are built from each lead’s own data. Use "Save text" to keep a manual edit for this lead. Check any amber items before sending.',
+ mc_compose:'Write',mc_count:'Count',mc_f_todo:'Ready to send',mc_f_sent:'Contacted',mc_f_all:'All',mc_list:'List',link_blocked_copied:'Popup blocked; link copied, paste it in your own browser.',
+ mc_need_name:'Enter your sender name first (or remove [YOUR NAME] from the text).',angle:'Opening angle (optional, English)'});
+
+Object.assign(T.fa,{local_mode_sa:'نسخهٔ دانلودی: داده‌ها فقط در همین مرورگر روی همین دستگاه می‌مانند. گاهی پشتیبان بگیرید.',store_bad:'هشدار: مرورگر اجازهٔ ذخیره نمی‌دهد (حالت خصوصی یا فایل محدود شده). تغییرات با بستن صفحه از بین می‌روند؛ همین حالا پشتیبان بگیرید.',sa_save_copy:'ذخیرهٔ نسخهٔ به‌روز با داده‌ها'});
+Object.assign(T.en,{local_mode_sa:'Downloaded copy: data stays in this browser on this device only. Back up from time to time.',store_bad:'Warning: the browser blocks saving (private mode or restricted file). Changes are lost when you close the page; back up now.',sa_save_copy:'Save updated copy with data'});
+
+Object.assign(T.fa,{geo_region:'منطقه',geo_city:'شهر',geo_all:'همه',geo_all_region:'کل منطقه',geo_leads:'لید',geo_sent:'ارسال‌شده',geo_replied:'پاسخ‌داده',geo_won:'فروخته',geo_city_ov:'شهر (اختیاری؛ برای جایگزینی شهر خودکار)'});
+Object.assign(T.en,{geo_region:'Region',geo_city:'City',geo_all:'All',geo_all_region:'Whole region',geo_leads:'leads',geo_sent:'contacted',geo_replied:'replied',geo_won:'won',geo_city_ov:'City (optional; overrides the automatic one)'});
+
+Object.assign(T.fa,{sy_title:'همگام‌سازی دستگاه‌ها',sy_help:'داده‌های پنل (لیدها، پیام‌ها، پروژه‌ها، پرداخت‌ها) در یک Gist خصوصی گیت‌هاب شما ذخیره می‌شود تا لپ‌تاپ، موبایل و همکارانتان یک اطلاعات مشترک ببینند. هر دستگاه خودکار هر یک دقیقه و بعد از هر تغییر همگام می‌شود.',
+ sy_off:'همگام‌سازی فعال نیست',sy_syncing:'در حال همگام‌سازی…',sy_ok:'همگام',sy_last:'آخرین',sy_now:'همگام‌سازی الان',sy_showcode:'نمایش کد اتصال (برای دستگاه دیگر)',sy_off_btn:'قطع اتصال این دستگاه',sy_off_confirm:'اتصال این دستگاه قطع شود؟ داده‌های همین دستگاه پاک نمی‌شوند.',
+ sy_s1:'در گیت‌هاب یک توکن (Classic) فقط با دسترسی gist بسازید:',sy_s1b:'ساخت توکن',sy_s2:'توکن را کپی کنید و در کادر زیر بگذارید. (این دستگاه اولی است.)',sy_token:'توکن گیت‌هاب',sy_create:'ساخت فضای همگام‌سازی جدید',sy_code:'یا دستگاه دوم: کد اتصال را از دستگاه اول اینجا بگذارید',sy_connect:'اتصال با کد',
+ sy_need_token:'اول توکن را وارد کنید.',sy_bad_code:'کد اتصال معتبر نیست.',sy_creating:'در حال ساخت…',sy_connecting:'در حال اتصال…',sy_done:'همگام‌سازی فعال شد',
+ sy_code_help:'این کد شامل توکن شماست؛ فقط برای دستگاه‌ها یا همکاران مورد اعتماد بفرستید. هر کس این کد را داشته باشد به داده‌های پنل و Gistهای شما دسترسی دارد.',
+ sy_e_net:'اینترنت یا دسترسی به api.github.com در دسترس نیست (VPN؟).',sy_e_token:'توکن نامعتبر یا منقضی است.',sy_e_notfound:'Gist پیدا نشد (کد اشتباه یا حذف شده).',sy_e_rate:'گیت‌هاب موقتاً محدودیت گذاشت؛ چند دقیقه بعد دوباره تلاش می‌شود.',
+ sy_banner_off:'داده‌ها فقط روی همین دستگاه ذخیره می‌شوند. برای استفادهٔ مشترک بین دستگاه‌ها همگام‌سازی را فعال کنید.',sy_enable:'فعال‌سازی همگام‌سازی'});
+Object.assign(T.en,{sy_title:'Device sync',sy_help:'Panel data (leads, messages, projects, payments) is stored in a private GitHub Gist so your laptop, phone and teammates share one dataset. Each device syncs every minute and after each change.',
+ sy_off:'Sync is off',sy_syncing:'Syncing…',sy_ok:'In sync',sy_last:'last',sy_now:'Sync now',sy_showcode:'Show connect code (for another device)',sy_off_btn:'Disconnect this device',sy_off_confirm:'Disconnect this device? Data on this device is kept.',
+ sy_s1:'On GitHub, create a Classic token with only the gist scope:',sy_s1b:'Create token',sy_s2:'Copy the token and paste it below. (This is the first device.)',sy_token:'GitHub token',sy_create:'Create new sync space',sy_code:'Or second device: paste the connect code from the first device',sy_connect:'Connect with code',
+ sy_need_token:'Enter the token first.',sy_bad_code:'That connect code is not valid.',sy_creating:'Creating…',sy_connecting:'Connecting…',sy_done:'Sync is on',
+ sy_code_help:'This code contains your token; only share it with devices or teammates you trust. Anyone with it can access the panel data and your Gists.',
+ sy_e_net:'No internet or api.github.com is unreachable (VPN?).',sy_e_token:'Token invalid or expired.',sy_e_notfound:'Gist not found (wrong code or deleted).',sy_e_rate:'GitHub is rate-limiting; will retry in a few minutes.',
+ sy_banner_off:'Data is stored on this device only. Turn on sync to share it across devices.',sy_enable:'Turn on sync'});
+const LOGO_LOCKUP='data:image/webp;base64,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';
+const LOGO_MARK='data:image/webp;base64,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';
+const LOGO_FAV='data:image/png;base64,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';
+const VERSION='13';
+const SKEL=(()=>{try{return '<!doctype html>\n'+document.documentElement.outerHTML}catch{return ''}})();
+const PEND={};
+/* ---------- helpers ---------- */
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+const nowISO=()=>new Date().toISOString();
+const dayKey=d=>{const x=new Date(d);return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0')};
+const num=v=>{const n=parseFloat(String(v??'').replace(/,/g,''));return isFinite(n)?n:0};
+const fmt=(n,d=2)=>new Intl.NumberFormat('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}).format(n||0);
+const store={get(k){try{return localStorage.getItem(k)}catch{return null}},set(k,v){try{localStorage.setItem(k,v);return localStorage.getItem(k)===v}catch{return false}}};
+const S={tab:'today',mailTab:'queue',lang:store.get('lm_lang')||'fa',ready:false,mode:'local',db:null,dl:null,assets:null,
+  data:{leads:{},logs:{},projects:{},payments:{},templates:{},settings:{}},
+  f:{q:'',cat:'',stage:'',market:'',region:'',city:''},sel:null,pjFilter:'',finPeriod:'all',pendingDel:null};
+const t=k=>(T[S.lang]&&T[S.lang][k])??T.en[k]??k;
+const set=()=>({senderName:'',senderEmail:'landmark.visualstudio@gmail.com',brand:'Landmark Estate Films',limit:20,minNightly:100,gap1:4,gap2:7,rate:0,rateAt:'',...(S.data.settings.main||{})});
+const list=c=>Object.values(S.data[c]);
+const leadName=id=>S.data.leads[id]?.name||'';
+const fd=iso=>{if(!iso)return '—';const d=new Date(iso);if(isNaN(d))return '—';return d.toLocaleDateString(S.lang==='fa'?'fa-IR-u-ca-persian-nu-latn':'en-GB',{year:'numeric',month:'short',day:'numeric'})};
+const maxSteps=l=>styleOf(l)==='email'?3:2;
+const gapDays=(l,st)=>st===1?set().gap1:set().gap2;
+const CATS=['agency','airbnb','booking'];
+const cat=l=>l.category||(l.segment==='host'?(l.platform==='booking'?'booking':'airbnb'):'agency');
+const isHost=l=>cat(l)!=='agency';
+const EUROPE=['Albania','Andorra','Austria','Belgium','Bulgaria','Croatia','Cyprus','Czechia','Denmark','Estonia','Finland','France','Germany','Greece','Hungary','Iceland','Ireland','Italy','Latvia','Lithuania','Luxembourg','Malta','Monaco','Montenegro','Netherlands','Norway','Poland','Portugal','Romania','Slovenia','Spain','Sweden','Switzerland','United Kingdom'];
+const GOODCUR=['EUR','GBP','CHF','SEK','NOK','DKK'];
+function fit(l){if(!isHost(l))return null;const min=num(set().minNightly)||100;const r=[];let known=0,bad=0;
+  if(l.nightlyUsd){known++;if(num(l.nightlyUsd)<min){bad++;r.push('<'+min+'$')}}
+  if(l.country){known++;if(!EUROPE.includes(l.country)){bad++;r.push(l.country)}}
+  if(l.currency){known++;if(!GOODCUR.includes(l.currency)){bad++;r.push(l.currency)}}
+  return known<3?{s:'unk',r}:{s:bad?'no':'ok',r}}
+function closeScore(l){
+  if(l.dnc||l.stage==='lost')return{n:0,r:[]};if(l.stage==='won')return{n:100,r:[]};
+  let n=30;const r=[];const add=(v,why)=>{n+=v;r.push((v>0?'+':'')+v+' '+why)};
+  const mail=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(l.email||'');
+  if(mail&&l.verified)add(20,t('sc_mail'));else if(mail)add(10,t('sc_mail2'));else if(l.instagram||l.phone)add(3,t('sc_other'));else add(-10,t('sc_none'));
+  if(l.independent==='yes')add(15,t('sc_indep'));else if(l.independent==='no')add(-15,t('sc_big'));
+  if(l.video==='none')add(20,t('sc_novideo'));else if(l.video==='weak')add(12,t('sc_weak'));else if(l.video==='good')add(-20,t('sc_good'));
+  const sc=num(l.score)||3;if(sc!==3)add((sc-3)*5,t('sc_fit'));
+  const f=fit(l);if(f){if(f.s==='ok')add(15,t('sc_crit'));else if(f.s==='no')add(-25,t('sc_nocrit'));if(num(l.nightlyUsd)>=250)add(5,t('sc_price'))}
+  const st={replied:25,sample:35,quote:45}[l.stage];if(st)add(st,t('sc_stage'));
+  return{n:Math.max(0,Math.min(100,n)),r}}
+const validEmail=e=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e||'');
+const ltr=s=>`<span class="ltr">${esc(s)}</span>`;
+function toast(m,ms=2200){const el=$('#toast');el.innerHTML=`<div>${esc(m)}</div>`;clearTimeout(toast.h);toast.h=setTimeout(()=>el.innerHTML='',ms)}
+async function copy(text){let ok=false;
+  try{await navigator.clipboard.writeText(text);ok=true}catch{}
+  if(!ok){const ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.cssText='position:fixed;top:0;left:0;width:1px;height:1px;opacity:0';document.body.appendChild(ta);ta.focus();ta.select();ta.setSelectionRange(0,text.length);try{ok=document.execCommand('copy')}catch{}ta.remove()}
+  if(ok){toast(t('copied'));return true}
+  const el=$('#mc_bd');if(el){el.focus();el.select()}
+  toast(t('copy_fail'),8000);return false}
+async function saveFile(name,data,type='text/plain'){
+  if(S.dl){try{await S.dl.save({filename:name,data});return}catch(e){if(e&&e.code==='declined')return;toast(t('err')+': '+(e.message||e.code||''));return}}
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+const csvCell=v=>{v=String(v??'');return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};
+const toCSV=(rows,cols)=>'﻿'+[cols.join(','),...rows.map(r=>cols.map(c=>csvCell(r[c])).join(','))].join('\n');
+function parseCSV(txt){const rows=[];let row=[],cur='',q=false;txt=txt.replace(/^﻿/,'');
+  for(let i=0;i<txt.length;i++){const c=txt[i];
+    if(q){if(c==='"'){if(txt[i+1]==='"'){cur+='"';i++}else q=false}else cur+=c}
+    else if(c==='"')q=true; else if(c===','||c==='\t'){row.push(cur);cur=''}
+    else if(c==='\n'||c==='\r'){if(c==='\r'&&txt[i+1]==='\n')i++;row.push(cur);cur='';if(row.some(x=>x.trim()))rows.push(row);row=[]}
+    else cur+=c}
+  row.push(cur);if(row.some(x=>x.trim()))rows.push(row);return rows}
+
+/* ---------- persistence ---------- */
+function saveLocal(){const ok=store.set('lm_data',JSON.stringify(S.data));if(!SYNC.apply&&typeof syncSoon==='function')syncSoon();if(ok===false&&!S.storeBad){S.storeBad=true;drawChrome()}else if(ok&&S.storeBad){S.storeBad=false;drawChrome()}}
+const clean=o=>JSON.parse(JSON.stringify(o,(k,v)=>typeof v==='number'&&!isFinite(v)?0:v));
+function dbErr(e){const c=(e&&e.code)||'';const m=(e&&e.message)||String(e||'');const x=new Error((c?c+': ':'')+m+((c==='invalid_argument'||c==='permission_denied'||c==='not_granted')?' - '+t('err_write'):''));x.code=c;return x}
+async function put(col,obj){obj.id=obj.id||uid();obj.updatedAt=nowISO();const prev=S.data[col][obj.id];const key=col+'/'+obj.id;S.data[col][obj.id]=obj;render();
+  if(S.db){PEND[key]=obj;try{await S.db.collection(col).doc(obj.id).set(clean(obj));delete PEND[key]}catch(e){delete PEND[key];if(prev)S.data[col][obj.id]=prev;else delete S.data[col][obj.id];render();throw dbErr(e)}}else saveLocal();return obj}
+async function del(col,id){const prev=S.data[col][id];delete S.data[col][id];if(!S.db){TOMB[col+'/'+id]=nowISO();tombSave()}render();
+  if(S.db){try{await S.db.collection(col).doc(id).delete()}catch(e){if(prev)S.data[col][id]=prev;render();throw dbErr(e)}}else saveLocal()}
+window.addEventListener('unhandledrejection',e=>{e.preventDefault();toast(t('err')+': '+((e.reason&&e.reason.message)||''),7000)});
+async function addLog(leadId,type,text,extra={}){return put('logs',{leadId,type,text,ts:nowISO(),...extra})}
+async function putSettings(patch){const s={...(S.data.settings.main||{}),...patch,id:'main'};return put('settings',s)}
+
+/* ---------- templates ---------- */
+function tplKey(l,step){const g=l.channel==='email'?'email':'dm';const seg=isHost(l)?'host':'agent';
+  const c=[`${seg}_${l.channel}_${step}`,`${seg}_${g}_${step}`,`${seg}_${l.channel}_1`];
+  for(const k of c){const o=S.data.templates[k];if(o)return k;if(DEFAULT_TPL[k])return k}return null}
+const tplGet=k=>S.data.templates[k]||DEFAULT_TPL[k]||{subject:'',body:''};
+function gmail(to,su,body){const s=set();return `https://mail.google.com/mail/?${s.senderEmail?'authuser='+encodeURIComponent(s.senderEmail)+'&':''}view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(su)}&body=${encodeURIComponent(body)}`}
+
+/* ---------- prices, property facts, personalised text ---------- */
+const PRICE_DEF={priceCur:'EUR',hostVideo:79,hostVideoIntro:59,host3d:149,agentReel:69,agentPack4:229};
+const price=k=>{const v=set()[k];return(v===undefined||v===null||v==='')?PRICE_DEF[k]:v};
+const money=n=>{const c=String(price('priceCur')||'EUR').toUpperCase();const sym={EUR:'€',USD:'$',GBP:'£'}[c];return sym?sym+n:n+' '+c};
+function propBits(l){const title=l.name||'',nt=l.notes||'';const tl=title.toLowerCase(),all=(title+' '+(l.size||'')+' '+nt).toLowerCase();
+  const mk=(l.market||'').split(',').map(x=>x.trim()).filter(Boolean);
+  const place=mk.length>1?`${mk[0]}, ${mk[1]}`:(mk[0]||l.country||'your area');
+  const type=/finca/.test(all)?'finca':/farm/.test(all)?'farmhouse':/studio|estudio/.test(tl)?'studio':/\bloft\b/.test(all)?'loft':/apartment|apartamento|flat|penthouse|condo/.test(tl)?'apartment':/\b(house|casa|bergerie|cottage)\b/.test(tl)?'house':/villa|chalet/.test(all)?'villa':'property';
+  const f=[];
+  if(/infinity/.test(tl))f.push('infinity pool');else if(/pool|piscine/.test(tl))f.push('pool');
+  if(/sea ?view|seaview|sea views/.test(tl))f.push('sea view');else if(/lake/.test(tl))f.push('lake view');else if(/beach/.test(tl))f.push('beach location');else if(/views?\b/.test(tl))f.push('views');
+  if(/jacuzzi/.test(tl))f.push('jacuzzi');if(/vineyard/.test(tl))f.push('vineyard view');if(/garden/.test(tl))f.push('garden');
+  const feat=f.slice(0,2).join(' and ');
+  let rating=l.rating,reviews=l.reviews;if(!rating){const m=nt.match(/(\d(?:\.\d+)?)\s*\((\d+) reviews?\)/);if(m){rating=m[1];reviews=m[2]}}
+  const proof=rating&&reviews?`rated ${rating} from ${reviews} reviews`:'';
+  const hook=`I came across your ${type} in ${place}${proof?' ('+proof+')':''} and thought ${feat?'the '+feat+' would':'it would'} work really well in a short video tour.`;
+  return{place,type,feat,proof,hook,property:`${type} in ${place}`}}
+const offerLine=l=>isHost(l)?`If you like the sample, the full video tour is ${money(price('hostVideoIntro'))} (introductory price for my first clients, normally ${money(price('hostVideo'))}).`:`If you like it, regular work is ${money(price('agentReel'))} per video, or 4 videos for ${money(price('agentPack4'))}.`;
+function fill(str,l){const s=set();const first=(l.contactName||'').trim().split(/\s+/)[0];const pb=propBits(l);
+  const map={greet:first?`Hi ${first},`:'Hello,',name:first||(isHost(l)?'there':(l.name||'there')),agency:l.name||'your agency',market:l.market||'',sender:s.senderName||'[YOUR NAME]',brand:s.brand,listing:l.listingUrl||'your property',
+   hook:pb.hook,place:pb.place,property:pb.property,feat:pb.feat,proof:pb.proof,offer:offerLine(l),price:money(price('hostVideoIntro')),cur:String(price('priceCur'))};
+  return String(str||'').replace(/\{\{(\w+)\}\}/g,(m,k)=>k in map?map[k]:m)}
+async function markSent(id){const l={...S.data.leads[id]};const step=(l.step||0)+1;l.step=step;l.lastSent=nowISO();if(['new','researched'].includes(l.stage))l.stage='contacted';
+  await put('leads',l);await addLog(id,'sent',`${t('ch_'+l.channel)} ${t('step')} ${step}`,{step});toast(t('sent_logged'))}
+async function setStage(id,st){const l0=S.data.leads[id];if(!l0||l0.stage===st)return;const l={...l0},old=l0.stage;l.stage=st;
+  if(st==='contacted'&&!(l.step>0)){l.step=1;l.lastSent=l.lastSent||nowISO()}
+  if(st==='won')l.wonAt=nowISO();if(st==='lost')l.lostAt=nowISO();
+  await put('leads',l);await addLog(id,'stage',`${t('st_'+old)} → ${t('st_'+st)}`);toast(t('saved'))}
+const stSel=l=>`<div class="stbar" role="group" aria-label="${esc(t('stage'))}">${STAGES.map(x=>`<button type="button" class="stb ${l.stage===x?'on':''}" style="--c:${SC[x]}" data-act="set-stage" data-id="${l.id}" data-st="${x}" aria-pressed="${l.stage===x}">${esc(t('st_'+x))}</button>`).join('')}</div>`;
+
+/* ---------- pipeline chart ---------- */
+const SC={new:'#a3aab8',researched:'#8d96a8',contacted:'#6f86b0',replied:'#4f8fc4',sample:'#A65F2D',quote:'#B8955C',won:'#3f9b6b',lost:'#c0504d'};
+function pipelineCard(L,collapsible){const cnt=Object.fromEntries(STAGES.map(s=>[s,L.filter(l=>l.stage===s).length]));const tot=L.length;
+  const tile=(st,lab)=>`<button type="button" class="pftile" style="--c:${SC[st]}" data-act="pf-stage" data-st="${st}"><b class="num">${cnt[st]}</b><span>${esc(lab)}</span></button>`;
+  let acc=0;const stops=STAGES.filter(s=>cnt[s]).map(s=>{const a=acc/tot*100;acc+=cnt[s];return `${SC[s]} ${a}% ${acc/tot*100}%`});
+  const donut=tot?`conic-gradient(${stops.join(',')})`:'var(--surface2)';
+  const decided=cnt.won+cnt.lost,rate=decided?Math.round(cnt.won/decided*100)+'%':'—';
+  const rows=CATS.map(c=>{const LL=L.filter(l=>cat(l)===c);if(!LL.length)return '';
+    return `<div class="pfrow"><span>${esc(t('cat_'+c))} <small>${LL.length}</small></span><div class="pfbar">${STAGES.map(s=>{const n=LL.filter(l=>l.stage===s).length;return n?`<i style="flex:${n};background:${SC[s]}" title="${esc(t('st_'+s))}: ${n}"></i>`:''}).join('')}</div></div>`}).join('');
+  const inner=`<div class="pftiles">${tile('won',t('pf_sold'))}${tile('quote',t('pf_closing'))}${tile('sample',t('pf_review'))}${tile('lost',t('pf_notsold'))}</div>
+   <div class="pfmain"><div class="donutwrap"><div class="donut" style="background:${donut}" role="img" aria-label="${esc(STAGES.map(s=>t('st_'+s)+' '+cnt[s]).join(', '))}"></div><div class="donutc"><b class="num">${tot}</b><small>${esc(t('k_leads'))}</small></div></div>
+   <div class="pflegend">${STAGES.map(s=>`<button type="button" data-act="pf-stage" data-st="${s}"><i style="background:${SC[s]}"></i><span>${esc(t('st_'+s))}</span><b class="num">${cnt[s]}</b><small>${tot?Math.round(cnt[s]/tot*100):0}%</small></button>`).join('')}</div></div>
+   ${rows?`<div class="pfcats">${rows}</div>`:''}<p class="help" style="margin:10px 0 0">${esc(t('pf_rate'))}: <b>${rate}</b> · ${esc(t('pf_hint'))}</p>`;
+  return collapsible?`<details class="card pf" ${S.pfOpen===false?'':'open'} id="pfbox"><summary><h2 style="display:inline">${esc(t('pf_title'))}</h2></summary>${inner}</details>`:`<div class="card pf"><h2>${esc(t('pf_title'))}</h2>${inner}</div>`}
+
+document.addEventListener('toggle',e=>{if(e.target.id==='pfbox')S.pfOpen=e.target.open},true);
+
+/* ---------- derived ---------- */
+function due(l){if(l.dnc||l.stage!=='contacted'||!l.lastSent)return null;const st=l.step||0;if(st<1||st>=maxSteps(l))return null;
+  const d=new Date(l.lastSent);d.setDate(d.getDate()+gapDays(l,st));return d}
+function readyFirst(l){if(l.dnc||(l.step||0)>0)return false;if(!['new','researched'].includes(l.stage))return false;
+  return routeOf(l)!=='none'}
+function sentToday(){const k=dayKey(new Date());return list('logs').filter(x=>x.type==='sent'&&dayKey(x.ts)===k).length}
+function payCalc(p){const gross=num(p.gross);const fee=p.feeMode==='percent'?gross*num(p.fee)/100:num(p.fee);const net=gross-fee;const rate=num(p.rate);
+  const invUsd=num(p.invoiced)*(num(p.fx)||1);return {gross,fee,net,toman:net*rate,leak:invUsd>0&&gross>0?1-net/invUsd:null,feePct:gross>0?fee/gross*100:0}}
+
+/* ---------- chrome ---------- */
+const ICON={today:'<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/>',leads:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.7.7 2.8 2.3 3 5.2"/>',mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6.5L20.5 7"/>',projects:'<rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 11h18M7 6l2.5 5M12 6l2.5 5M17 6l2 5"/>',fin:'<circle cx="12" cy="12" r="9"/><path d="M14.8 8.8c-.5-.9-1.5-1.3-2.8-1.3-1.7 0-2.8.8-2.8 2s1 1.7 2.8 2.1 2.9.9 2.9 2.2-1.2 2-2.9 2c-1.4 0-2.5-.5-3-1.5M12 6v1.5M12 16.5V18"/>',settings:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/>'};
+const svg=n=>`<svg viewBox="0 0 24 24" aria-hidden="true">${ICON[n]}</svg>`;
+const NAV=[['today','nav_today'],['leads','nav_leads'],['mail','nav_mail'],['projects','nav_projects'],['fin','nav_fin']];
+const LOGO=`<img class="lg" src="${LOGO_LOCKUP}" alt="Landmark Estate Films">`;
+function badgeCount(){return list('leads').filter(l=>due(l)&&due(l)<=new Date()).length}
+function drawChrome(){
+  const b=badgeCount();
+  $('#side').innerHTML=`<div class="logo">${LOGO}</div><nav class="nav" aria-label="Main">${NAV.map(([k,l])=>`<button data-tab="${k}" ${S.tab===k?'aria-current="page"':''}>${svg(k)}<span>${esc(t(l))}</span>${k==='mail'&&b?`<span class="badge">${b}</span>`:''}</button>`).join('')}</nav><div class="nav" style="margin-top:8px"><button data-tab="settings" ${S.tab==='settings'?'aria-current="page"':''}>${svg('settings')}<span>${esc(t('nav_set'))}</span></button></div><div class="foot">${S.mode==='cloud'?'●':syncBadge()} ${S.mode==='cloud'?'Synced':syncOn()?'Sync':'Local'}</div>`;
+  $('#bottom').innerHTML=NAV.map(([k,l])=>`<button data-tab="${k}" ${S.tab===k?'aria-current="page"':''}>${svg(k)}<span>${esc(t(l))}</span>${k==='mail'&&b?`<span class="badge">${b}</span>`:''}</button>`).join('');
+  const titles={today:'today',leads:'nav_leads',mail:'mail',projects:'projects',fin:'fin',settings:'settings'};
+  $('#title').innerHTML=`<img class="mk" src="${LOGO_MARK}" alt="">`+esc(t(titles[S.tab]))+` <small class="ver">v${VERSION} · ${S.mode==='cloud'?'☁':syncBadge()}</small>`;
+  const tools={leads:`<button class="btn" data-act="import">${esc(t('import'))}</button><button class="btn primary" data-act="lead-new">+ ${esc(t('add_lead'))}</button>`,
+    projects:`<button class="btn primary" data-act="pj-new">+ ${esc(t('add_project'))}</button>`,fin:`<button class="btn primary" data-act="pay-new">+ ${esc(t('add_pay'))}</button>`,today:`<button class="btn primary" data-act="lead-new">+ ${esc(t('add_lead'))}</button>`}[S.tab]||'';
+  $('#tools').innerHTML=tools+`<button class="btn ghost sm" data-act="settings" aria-label="${esc(t('nav_set'))}" style="display:${S.tab==='settings'?'none':'inline-flex'}">${svg('settings').replace('<svg','<svg width="18" height="18" style="stroke:currentColor;fill:none;stroke-width:1.7"')}</button>`;
+  $('#banner').innerHTML=(()=>{if(S.mode!=='local'||!S.ready)return '';
+    if(S.storeBad)return `<div class="banner" style="background:rgba(192,80,77,.18);border-color:#c0504d"><b>${esc(t('store_bad'))}</b> <button type="button" class="btn sm" data-act="export-json">${esc(t('b_export'))}</button></div>`;
+    if(syncOn())return SYNC.status==='err'?`<div class="banner" style="background:rgba(192,80,77,.14);border-color:#c0504d">\u26A0 ${esc(SYNC.err)} <button type="button" class="btn sm" data-act="sync-now">${esc(t('sy_now'))}</button> <button type="button" class="btn sm" data-tab="settings">${esc(t('nav_set'))}</button></div>`:'';
+    const art=window.LM_TARGET!=='pages'&&!S.standalone;
+    return `<div class="banner">${esc(t(art?'local_mode':'sy_banner_off'))} <button type="button" class="btn sm" data-tab="settings">${esc(t('sy_enable'))}</button> <button type="button" class="btn sm" data-act="export-json">${esc(t('b_export'))}</button>${S.standalone?` <button type="button" class="btn sm" data-act="app-dl">${esc(t('sa_save_copy'))}</button>`:''}${art?` <a href="${ONLINE_URL}" target="_blank" rel="noopener" style="color:inherit;font-weight:700">${esc(t('go_online'))}</a>`:''}</div>`})();
+  document.documentElement.lang=S.lang;document.documentElement.dir=S.lang==='fa'?'rtl':'ltr';
+}
+
+/* ---------- views ---------- */
+const chip=(txt,cls='')=>`<span class="chip ${cls}">${esc(txt)}</span>`;
+const stageCls=s=>({won:'good',lost:'bad',replied:'good',sample:'warn',quote:'warn'}[s]||'');
+const httpUrl=u=>{u=String(u||'').trim();if(!u)return '';if(!/^https?:\/\//i.test(u))u='https://'+u.replace(/^\/+/,'');try{const x=new URL(u);return /^https?:$/.test(x.protocol)&&x.hostname.includes('.')?x.href:''}catch{return ''}};
+const igUrl=h=>{h=String(h||'').trim();if(!h)return '';if(/instagram\.com/i.test(h))return httpUrl(h);return 'https://www.instagram.com/'+h.replace(/^@/,'').replace(/\/+$/,'')+'/'};
+const lnk=(href,label,cls='')=>href?`<a class="btn sm ${cls}" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`:'';
+const leadLinks=l=>[lnk(httpUrl(l.listingUrl),t('open_listing'),'primary'),lnk(httpUrl(l.website),t('open_site')),lnk(igUrl(l.instagram),'Instagram')].join('');
+function leadRow(l,extra=''){const d=due(l);
+  return `<div class="row"><div class="grow"><div class="t">${esc(l.name)}</div><div class="s">${esc(l.market||'')}${l.email?' · '+ltr(l.email):''}</div><div class="lk">${leadLinks(l)}</div></div>${chip(t('st_'+l.stage),stageCls(l.stage))}${extra}<button class="btn sm" data-act="lead-edit" data-id="${l.id}">${esc(t('edit'))}</button></div>`}
+function accessCard(){if(S.standalone||window.LM_TARGET==='pages')return '';let hide='';try{hide=localStorage.getItem('lm_hide_access')||''}catch{}
+  if(hide)return '';
+  return `<div class="card" style="margin-bottom:14px"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><div><h2 style="margin:0 0 4px">${esc(t('access_title'))}</h2><p class="help" style="margin:0 0 10px">${esc(t('access_help'))}</p></div><button class="btn ghost sm" data-act="hide-access" aria-label="${esc(t('close'))}">×</button></div><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn primary" href="${esc(ONLINE_URL)}" target="_blank" rel="noopener noreferrer">${esc(t('open_browser'))} ↗</a><button class="btn" data-act="app-dl">${esc(t('app_dl'))}</button><button class="btn" data-act="sync">${esc(t('sync_btn'))}</button></div></div>`}
+function vToday(){
+  const L=list('leads'),s=set();const contacted=L.filter(l=>(l.step||0)>0||['replied','sample','quote','won','lost'].includes(l.stage)).length;
+  const replied=L.filter(l=>['replied','sample','quote','won'].includes(l.stage)).length;
+  const mk=dayKey(new Date()).slice(0,7);const rev=list('payments').filter(p=>p.status==='received'&&String(p.date||'').startsWith(mk)).reduce((a,p)=>a+payCalc(p).net,0);
+  const byC=(a,b)=>closeScore(b).n-closeScore(a).n;
+  const dueL=L.filter(l=>due(l)&&due(l)<=new Date()).sort(byC),rdy=L.filter(readyFirst).sort(byC);
+  const left=Math.max(0,num(s.limit)-sentToday());
+  const logs=list('logs').filter(x=>x.type==='reply').sort((a,b)=>b.ts.localeCompare(a.ts)).slice(0,5);
+  const fun=STAGES.map(st=>[st,L.filter(l=>l.stage===st).length]);const mx=Math.max(1,...fun.map(x=>x[1]));
+  return accessCard()+`<div class="grid kpis">
+   <div class="card kpi"><small>${esc(t('k_leads'))}</small><b class="num">${L.length}</b></div>
+   <div class="card kpi"><small>${esc(t('k_contacted'))}</small><b class="num">${contacted}</b></div>
+   <div class="card kpi"><small>${esc(t('k_reply'))}</small><b class="num">${contacted?Math.round(replied/contacted*100):0}%</b></div>
+   <div class="card kpi"><small>${esc(t('k_won'))}</small><b class="num">${L.filter(l=>l.stage==='won').length}</b></div>
+   <div class="card kpi"><small>${esc(t('k_rev'))}</small><b class="num">${fmt(rev)}</b><span>USDT</span></div>
+   <div class="card kpi"><small>${esc(t('sent_today'))}</small><b class="num">${sentToday()}/${num(s.limit)}</b></div></div>
+  ${pipelineCard(L,false)}
+  <div class="cols">
+   <div class="card"><h2>${esc(t('due'))} ${dueL.length?chip(dueL.length,'warn'):''}</h2>${dueL.length?dueL.map(l=>leadRow(l,`<button class="btn sm primary" data-act="queue-open" data-id="${l.id}">${esc(t('open'))}</button>`)).join(''):`<div class="empty">${esc(t('nothing_due'))}</div>`}</div>
+   <div class="card"><h2>${esc(t('ready'))} ${rdy.length?chip(rdy.length):''}${left<rdy.length&&rdy.length?` <span class="help">(${left} left today)</span>`:''}</h2>${rdy.length?rdy.slice(0,6).map(l=>leadRow(l,`<button class="btn sm primary" data-act="queue-open" data-id="${l.id}">${esc(t('open'))}</button>`)).join(''):`<div class="empty">${esc(t('nothing_ready'))}</div>`}</div>
+   <div class="card"><h2>${esc(t('replies'))}</h2>${logs.length?logs.map(x=>`<div class="row"><div class="grow"><div class="t">${esc(leadName(x.leadId))}</div><div class="s">${esc(x.text||'')}</div></div><span class="s">${fd(x.ts)}</span></div>`).join(''):`<div class="empty">${esc(t('nothing_replies'))}</div>`}</div>
+  </div>`}
+
+function filteredLeads(){const f=S.f,q=f.q.trim().toLowerCase();
+  return list('leads').filter(l=>(!f.cat||cat(l)===f.cat)&&(!f.stage||l.stage===f.stage)&&geoOk(l)&&(!q||[l.name,l.email,l.market,l.contactName,l.instagram,l.website,l.notes].join(' ').toLowerCase().includes(q)))
+   .sort((a,b)=>rk(a)-rk(b)||closeScore(b).n-closeScore(a).n||(a.name||'').localeCompare(b.name||''))}
+const rk=l=>l.stage==='won'?1:(l.stage==='lost'||l.dnc)?2:0;
+function leadsListHTML(){const L=filteredLeads();
+  if(!list('leads').length)return `<div class="card empty"><b>${esc(t('empty_leads'))}</b>${esc(t('empty_leads_s'))}</div>`;
+  return `<div class="card">${L.map(l=>{const d=due(l);
+   return `<div class="row"><div class="grow"><div class="t">${esc(l.name)} ${l.dnc?chip(t('dnc'),'bad'):''}</div><div class="s">${esc(l.market||'')}${l.country?' · '+esc(l.country):''}${l.size?' · '+esc(l.size):''}</div><div class="s">${l.email?ltr(l.email):''}${l.instagram?' '+ltr(l.instagram):''}${!l.email&&!l.instagram&&!l.listingUrl?esc(t('no_contact')):''}</div><div class="lk">${leadLinks(l)}</div></div>
+   <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">${(c=>chip(t('chance')+' '+c.n,c.n>=70?'good':c.n>=45?'warn':'')
+  .replace('<span','<span title="'+esc(c.r.join(' | '))+'"'))(closeScore(l))}${chip(t('cat_'+cat(l)))}${chip(cityOf(l))}${(f=>f?chip(t('fit_'+f.s),f.s==='ok'?'good':f.s==='no'?'bad':'warn'):'')(fit(l))}${isHost(l)&&l.nightlyUsd?chip('$'+fmt(num(l.nightlyUsd),0)+'/'+t('night')):''}${chip(l.verified?t('verified'):t('unverified'),l.verified?'good':'warn')}${(l.step||0)>0?chip(`${l.step}/${maxSteps(l)}`):''}${d?chip((d<=new Date()?t('overdue')+' ':'')+fd(d),d<=new Date()?'warn':''):''}</div>
+   <div class="rowact">${stSel(l)}<button class="btn sm primary" data-act="msg-open" data-id="${l.id}">${esc(t('msg_btn'))}</button><button class="btn sm" data-act="lead-edit" data-id="${l.id}">${esc(t('edit'))}</button></div></div>`}).join('')||`<div class="empty">—</div>`}</div>`}
+function critCard(){const min=num(set().minNightly)||100;
+  return `<details class="card" style="margin-bottom:14px" open><summary style="cursor:pointer;font-weight:700">${esc(t('crit_title'))}</summary><ul style="margin:10px 0 0;padding-inline-start:20px;line-height:1.9"><li>${esc(t('crit_1'))}</li><li>${esc(t('crit_2'))} (${GOODCUR.join(', ')})</li><li>${esc(t('crit_3').replace('{n}',min))}</li><li>${esc(t('crit_4'))}</li></ul><p class="help" style="margin-bottom:0">${esc(t('crit_regions'))}</p></details>`}
+function vLeads(){const mk=[...new Set(list('leads').map(l=>l.market).filter(Boolean))].sort();const L=list('leads');
+  const tabs=`<div class="tabs"><button data-cat="" aria-pressed="${!S.f.cat}">${esc(t('all'))} ${L.length}</button>${CATS.map(c=>`<button data-cat="${c}" aria-pressed="${S.f.cat===c}">${esc(t('cat_'+c))} ${L.filter(l=>cat(l)===c).length}</button>`).join('')}</div>`;
+  return tabs+pipelineCard(S.f.cat?L.filter(l=>cat(l)===S.f.cat):L,true)+(S.f.cat==='airbnb'||S.f.cat==='booking'?critCard():'')+`<div class="filters"><input id="flt_q" type="search" placeholder="${esc(t('search'))}" value="${esc(S.f.q)}" aria-label="${esc(t('search'))}">
+   <select id="flt_stage" aria-label="${esc(t('stage'))}"><option value="">${esc(t('stage'))}: ${esc(t('all'))}</option>${STAGES.map(s=>`<option value="${s}" ${S.f.stage===s?'selected':''}>${esc(t('st_'+s))}</option>`).join('')}</select>
+   <button class="btn" data-act="export-leads">${esc(t('export'))}</button></div>${geoBar(S.f.cat?L.filter(l=>cat(l)===S.f.cat):L)}${geoStats(L)}<p class="help" style="margin:0 0 8px">${esc(t('sort_note'))}</p><div id="leadlist">${leadsListHTML()}</div>`}
+
+function vProjects(){
+  const P=list('projects').sort((a,b)=>(b.updatedAt||'').localeCompare(a.updatedAt||''));
+  const tabs=`<div class="tabs"><button aria-pressed="${!S.pjFilter}" data-pf="">${esc(t('all'))} ${P.length}</button>${PSTAT.map(s=>`<button aria-pressed="${S.pjFilter===s}" data-pf="${s}">${esc(t('ps_'+s))} ${P.filter(p=>p.status===s).length}</button>`).join('')}</div>`;
+  const rows=P.filter(p=>!S.pjFilter||p.status===S.pjFilter);
+  if(!P.length)return tabs+`<div class="card empty"><b>${esc(t('empty_pj'))}</b>${esc(t('empty_pj_s'))}</div>`;
+  return tabs+`<div class="card">${rows.map(p=>{const ck=CHECKS.filter(c=>p.ck&&p.ck[c]).length;
+   return `<div class="row"><div class="grow"><div class="t">${esc(p.title)}</div><div class="s">${esc(leadName(p.leadId))}${p.due?' · '+esc(t('pj_due'))+' '+fd(p.due):''}</div></div>${chip(t('ps_'+p.status),p.status==='paid'||p.status==='delivered'?'good':'')}${chip(ck+'/'+CHECKS.length)}${p.price?`<span class="num">${fmt(num(p.price),0)} ${esc(p.currency||'')}</span>`:''}<button class="btn sm" data-act="pj-edit" data-id="${p.id}">${esc(t('edit'))}</button></div>`}).join('')}</div>`}
+
+function vFin(){
+  const s=set();const rate=num(s.rate);const mk=dayKey(new Date()).slice(0,7);
+  const all=list('payments').sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+  const rows=all.filter(p=>S.finPeriod==='all'||String(p.date||'').startsWith(mk));
+  const rec=rows.filter(p=>p.status==='received');
+  const tot=rec.reduce((a,p)=>{const c=payCalc(p);a.net+=c.net;a.fee+=c.fee;a.toman+=c.toman;a.now+=c.net*rate;return a},{net:0,fee:0,toman:0,now:0});
+  const pend=rows.filter(p=>p.status==='pending').reduce((a,p)=>a+num(p.invoiced),0);
+  return `<div class="card" style="margin-bottom:14px"><div class="bar"><div class="field" style="min-width:180px"><label for="rate_in">${esc(t('rate'))}</label><input id="rate_in" class="inp" inputmode="decimal" dir="ltr" value="${rate||''}"></div><button class="btn primary" data-act="rate-save">${esc(t('rate_save'))}</button><span class="help">${esc(t('rate_upd'))}: ${s.rateAt?fd(s.rateAt):'—'}</span></div><div class="help">${esc(t('rate_note'))}</div></div>
+  <div class="tabs"><button aria-pressed="${S.finPeriod==='all'}" data-fp="all">${esc(t('all_time'))}</button><button aria-pressed="${S.finPeriod==='month'}" data-fp="month">${esc(t('this_month'))}</button></div>
+  <div class="grid kpis" style="margin-bottom:14px">
+   <div class="card kpi"><small>${esc(t('t_net'))}</small><b class="num">${fmt(tot.net)}</b><span>USDT</span></div>
+   <div class="card kpi"><small>${esc(t('t_toman'))}</small><b class="num">${fmt(tot.toman,0)}</b><span>${rate?esc(t('toman_now'))+': '+fmt(tot.now,0):''}</span></div>
+   <div class="card kpi"><small>${esc(t('t_fee'))}</small><b class="num">${fmt(tot.fee)}</b><span>USDT</span></div>
+   <div class="card kpi"><small>${esc(t('t_pending'))}</small><b class="num">${fmt(pend,0)}</b><span>${rows.filter(p=>p.status==='pending').length}</span></div></div>
+  ${rows.length?`<div class="card">${rows.map(p=>{const c=payCalc(p);return `<div class="row"><div class="grow"><div class="t">${esc(leadName(p.leadId)||p.method||'—')}</div><div class="s">${fd(p.date)} · ${esc(p.method||'')}${p.txid?' · '+ltr(p.txid.slice(0,14)+(p.txid.length>14?'…':'')):''}</div></div>
+   ${chip(t(p.status==='received'?'pst_received':'pst_pending'),p.status==='received'?'good':'warn')}
+   <div class="s" style="text-align:end"><div><span class="num">${fmt(num(p.invoiced),0)} ${esc(p.currency||'')}</span></div>${p.status==='received'?`<div>${esc(t('net'))}: <b class="num">${fmt(c.net)}</b> · ${esc(t('fee'))} <span class="num">${fmt(c.feePct,1)}%</span></div><div>${esc(t('toman'))}: <b class="num">${fmt(c.toman,0)}</b></div>`:''}</div>
+   ${p.receiptUrl?`<a class="btn sm" href="${esc(p.receiptUrl)}" target="_blank" rel="noopener">${esc(t('p_view_receipt'))}</a>`:''}
+   <button class="btn sm" data-act="pay-edit" data-id="${p.id}">${esc(t('edit'))}</button></div>`}).join('')}</div>`:`<div class="card empty"><b>${esc(t('empty_pay'))}</b>${esc(t('empty_pay_s'))}</div>`}`}
+
+function vSettings(){const s=set();const th=store.get('lm_theme')||'auto';
+  return `<div class="two" style="align-items:start"><div class="card"><h2>${esc(t('settings'))}</h2><div class="grid" style="gap:10px">
+   ${[['senderName','s_sender','text'],['senderEmail','s_email','email'],['brand','s_brand','text'],['limit','s_limit','number'],['minNightly','s_minnight','number'],['gap1','s_gap1','number'],['gap2','s_gap2','number']].map(([k,l,ty])=>`<div class="field"><label for="s_${k}">${esc(t(l))}</label><input class="inp" id="s_${k}" type="${ty}" value="${esc(s[k])}" ${ty==='email'?'dir="ltr"':''}></div>`).join('')}
+   <div class="field" style="border-top:1px solid var(--line);padding-top:10px"><label><b>${esc(t('s_prices'))}</b></label><p class="help" style="margin:0">${esc(t('s_prices_help'))}</p></div>
+   ${[['priceCur','s_pcur','text'],['hostVideo','s_hostvideo','number'],['hostVideoIntro','s_hostintro','number'],['host3d','s_host3d','number'],['agentReel','s_agentreel','number'],['agentPack4','s_agentpack','number']].map(([k,l,ty])=>`<div class="field"><label for="s_${k}">${esc(t(l))}</label><input class="inp" id="s_${k}" type="${ty}" value="${esc(s[k]??PRICE_DEF[k])}" ${ty==='text'?'dir="ltr"':''}></div>`).join('')}
+   <div class="field"><label>${esc(t('s_lang'))}</label><div class="tabs" style="margin:0"><button data-lang="fa" aria-pressed="${S.lang==='fa'}">فارسی</button><button data-lang="en" aria-pressed="${S.lang==='en'}">English</button></div></div>
+   <div class="field"><label>${esc(t('s_theme'))}</label><div class="tabs" style="margin:0">${['auto','light','dark'].map(x=>`<button data-theme="${x}" aria-pressed="${th===x}">${esc(t('th_'+x))}</button>`).join('')}</div></div>
+   <button class="btn primary" data-act="settings-save">${esc(t('save'))}</button></div></div>
+  <div class="grid" style="gap:14px">${syncCard()}<div class="card"><h2>${esc(t('backup'))}</h2><div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start"><button class="btn" data-act="export-json">${esc(t('b_export'))}</button><button class="btn" data-act="app-dl">${esc(t('sa_save_copy'))}</button><button class="btn" data-act="import-json">${esc(t('b_import'))}</button><button class="btn" data-act="export-leads">${esc(t('b_csv_leads'))}</button><button class="btn" data-act="export-pay">${esc(t('b_csv_pay'))}</button></div></div>
+  <div class="card"><h2>${esc(t('inst_title'))}</h2><p class="help" style="margin-top:0">${esc(instHint())}</p><div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start">${S.installEvt?`<button class="btn primary" data-act="install">${esc(t('inst_btn'))}</button>`:''}<button class="btn" data-act="sync">${esc(t('sync_btn'))}</button><a class="btn primary" href="${esc(ONLINE_URL)}" target="_blank" rel="noopener noreferrer">${esc(t('open_browser'))} ↗</a><button class="btn" data-act="app-dl">${esc(t('app_dl'))}</button><button class="btn" data-act="diag">${esc(t('diag_btn'))}</button><div class="help" id="diag_out" dir="auto"></div></div><p class="help">${esc(t('app_help'))}</p></div></div></div>`}
+
+function render(){
+  drawChrome();
+  const v=$('#view');
+  if(!S.ready){v.innerHTML=`<div class="card empty">${esc(t('loading'))}</div>`;return}
+  const f={today:vToday,leads:vLeads,mail:vMail,projects:vProjects,fin:vFin,settings:vSettings}[S.tab];
+  const keep=document.activeElement&&document.activeElement.id;const st=window.scrollY;
+  v.innerHTML=f();
+  if(keep&&$('#'+keep)&&["flt_q"].includes(keep)){const el=$('#'+keep);el.focus();try{el.setSelectionRange(el.value.length,el.value.length)}catch{}}
+}
+
+/* ---------- modal + forms ---------- */
+function closeModal(){$('#modal-root').innerHTML=''}
+function openForm({title,fields,values={},onSave,onDelete,preview,extra='',onChange}){
+  const root=$('#modal-root');const id='mf';
+  const fh=fields.map(f=>{const v=values[f.k]??'';const fid='f_'+f.k;const lab=`<label for="${fid}">${esc(f.label)}</label>`;
+    const dirA=f.ltr?' dir="ltr"':'';
+    if(f.type==='check')return `<div class="field check span2" data-fk="${f.k}"><input id="${fid}" type="checkbox" ${v?'checked':''}><label for="${fid}" style="font-size:14px;color:var(--fg)">${esc(f.label)}</label></div>`;
+    let ctl;
+    if(f.type==='select')ctl=`<select id="${fid}">${f.opts.map(([a,b])=>`<option value="${esc(a)}" ${String(v)===String(a)?'selected':''}>${esc(b)}</option>`).join('')}</select>`;
+    else if(f.type==='textarea')ctl=`<textarea id="${fid}" rows="${f.rows||4}"${dirA}>${esc(v)}</textarea>`;
+    else if(f.type==='file')ctl=`<input id="${fid}" type="file" accept="image/*,application/pdf">`;
+    else ctl=`<input id="${fid}" type="${f.type||'text'}" ${f.type==='number'?'step="any" inputmode="decimal"':''} value="${esc(v)}"${dirA}${f.ph?` placeholder="${esc(f.ph)}"`:''}>`;
+    return `<div class="field ${f.span?'span2':''}" data-fk="${f.k}">${lab}${ctl}</div>`}).join('');
+  root.innerHTML=`<div class="scrim" id="scrim"><div class="modal" id="${id}" role="dialog" aria-modal="true" aria-label="${esc(title)}"><header><h3>${esc(title)}</h3><button type="button" class="btn ghost sm" data-x="close">${esc(t('close'))}</button></header><div class="body">${fh}<div class="preview" id="mf_prev" hidden></div>${extra}<div class="help" id="mf_err" role="alert" style="grid-column:1/-1;color:#e0605a"></div></div><footer><button class="btn primary" type="button" data-x="save">${esc(t('save'))}</button>${onDelete?`<button class="btn danger" type="button" data-x="del">${esc(t('delete'))}</button>`:''}<button class="btn" type="button" data-x="close">${esc(t('cancel'))}</button></footer></div></div>`;
+  const form=$('#'+id);
+  const read=()=>{const o={};fields.forEach(f=>{const el=$('#f_'+f.k);if(!el)return;o[f.k]=f.type==='check'?el.checked:f.type==='file'?el.files[0]||null:el.value});return o};
+  const upd=()=>{if(!preview)return;const h=preview(read());const p=$('#mf_prev');p.hidden=!h;p.innerHTML=h||''};
+  const vis=()=>{const v=read();fields.forEach(f=>{if(f.showIf){const w=form.querySelector(`[data-fk="${f.k}"]`)||$('#f_'+f.k)?.closest('.field');if(w)w.hidden=!f.showIf(v)}})};
+  form.addEventListener('input',upd);form.addEventListener('change',e=>{upd();if(onChange){onChange(e.target.id.slice(2),read(),(k,val)=>{const el=$('#f_'+k);if(el)el.value=val});}vis()});upd();vis();
+  let armed=false;
+  form.addEventListener('click',e=>{const x=e.target.closest('[data-x]');if(!x)return;
+    if(x.dataset.x==='close')closeModal();
+    if(x.dataset.x==='save')doSave();
+    if(x.dataset.x==='del'){if(!armed){armed=true;x.textContent=t('confirm_del');return}onDelete();closeModal()}});
+  $('#scrim').addEventListener('mousedown',e=>{if(e.target.id==='scrim')closeModal()});
+  let busy=false;const doSave=async()=>{if(busy)return;busy=true;const btn=form.querySelector('[data-x=save]'),er=$('#mf_err');if(btn)btn.disabled=true;if(er)er.textContent='';
+    try{await onSave(read());closeModal();toast(t('saved'))}catch(err){busy=false;if(btn)btn.disabled=false;const m=t('err')+': '+((err&&(err.message||err.code))||'');if(er)er.textContent=m;toast(m,7000)}};
+  form.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName==='INPUT'&&!['file','checkbox'].includes(e.target.type)){e.preventDefault();doSave()}});
+  form._save=doSave;
+  const first=form.querySelector('input,select,textarea');if(first&&first.type!=='file'&&matchMedia('(min-width:900px)').matches)first.focus();
+}
+const opt=(arr,pre)=>arr.map(a=>[a,pre?t(pre+a):a]);
+function leadForm(id){const l0=id?S.data.leads[id]:{segment:'agent',category:'agency',stage:'new',channel:'email',step:0,score:3};const l={...l0,category:cat(l0)};
+  const H=l2=>['airbnb','booking'].includes(l2.category);
+  const F=[{k:'category',label:t('category'),type:'select',opts:CATS.map(c=>[c,t('cat_'+c)])},{k:'name',label:t('name')},
+   {k:'contactName',label:t('contact')},{k:'market',label:t('market')},{k:'email',label:t('email'),type:'email',ltr:1},{k:'phone',label:t('phone'),ltr:1},
+   {k:'instagram',label:t('ig'),ltr:1},{k:'website',label:t('site'),ltr:1},
+   {k:'country',label:t('country'),type:'select',opts:[['',t('none')],...EUROPE.map(c=>[c,c]),['Other','Other']],showIf:v=>H(v)},
+   {k:'currency',label:t('currency'),type:'select',opts:[['',t('none')],...[...GOODCUR,'USD','Other'].map(c=>[c,c])],showIf:v=>H(v)},
+   {k:'nightlyUsd',label:t('nightly'),type:'number',showIf:v=>H(v)},{k:'photos',label:t('photos_n'),type:'number',showIf:v=>H(v)},
+   {k:'listingUrl',label:t('listing'),ltr:1,span:1,showIf:v=>H(v)},
+   {k:'size',label:t('size')},{k:'score',label:t('score'),type:'number'},
+   {k:'independent',label:t('independent'),type:'select',opts:[['unknown',t('unknown')],['yes',t('yes')],['no',t('no')]]},{k:'video',label:t('video_q'),type:'select',opts:[['unknown',t('unknown')],['none',t('v_none')],['weak',t('v_weak')],['good',t('v_good')]]},
+   {k:'channel',label:t('channel'),type:'select',opts:opt(['email','instagram','airbnb','booking'],'ch_')},{k:'stage',label:t('stage'),type:'select',opts:opt(STAGES,'st_')},
+   {k:'source',label:t('source'),ltr:1},{k:'notes',label:t('notes'),type:'textarea',span:1,rows:3},
+   {k:'city',label:t('geo_city_ov'),ltr:1},{k:'angle',label:t('angle'),span:1,ltr:1,ph:'your listings in Marbella / a family agency in Lagos'},
+   {k:'verified',label:t('is_verified'),type:'check'},{k:'dnc',label:t('is_dnc'),type:'check'}];
+  openForm({title:id?t('edit')+': '+l.name:t('add_lead'),fields:F,values:l,
+   onChange:(k,v,setv)=>{if(k==='category')setv('channel',v.category==='agency'?'email':v.category)},
+   onSave:async v=>{if(!v.name.trim())throw new Error('name');const o={...l0,...v,name:v.name.trim(),score:num(v.score)||3,nightlyUsd:num(v.nightlyUsd)||0,photos:num(v.photos)||0};
+     o.segment=o.category==='agency'?'agent':'host';o.platform=o.category==='agency'?'':o.category;if(!o.id)o.createdAt=nowISO();await put('leads',o)},
+   onDelete:id?()=>{del('leads',id);toast(t('deleted'))}:null})}
+function pjForm(id){const p=id?S.data.projects[id]:{status:'intake',currency:'USD',ck:{}};
+  const leads=[['',t('none')],...list('leads').map(l=>[l.id,l.name]).sort((a,b)=>a[1].localeCompare(b[1]))];
+  const F=[{k:'title',label:t('pj_title'),span:1},{k:'leadId',label:t('pj_lead'),type:'select',opts:leads},{k:'status',label:t('pj_status'),type:'select',opts:opt(PSTAT,'ps_')},
+   {k:'price',label:t('pj_price'),type:'number'},{k:'currency',label:t('pj_cur'),type:'select',opts:opt(CURS)},{k:'due',label:t('pj_due'),type:'date'},
+   {k:'url',label:t('pj_url'),ltr:1,span:1},{k:'notes',label:t('notes'),type:'textarea',span:1,rows:3},
+   ...CHECKS.map(c=>({k:'ck_'+c,label:t('ck_'+c),type:'check'}))];
+  const vals={...p,...Object.fromEntries(CHECKS.map(c=>['ck_'+c,!!(p.ck&&p.ck[c])]))};
+  openForm({title:id?t('edit')+': '+p.title:t('add_project'),fields:F,values:vals,
+   onSave:async v=>{if(!v.title.trim())throw new Error('title');const ck={};CHECKS.forEach(c=>ck[c]=!!v['ck_'+c]);const o={...p,...v,ck};CHECKS.forEach(c=>delete o['ck_'+c]);o.price=num(v.price);if(!o.id)o.createdAt=nowISO();await put('projects',o)},
+   onDelete:id?()=>{del('projects',id);toast(t('deleted'))}:null})}
+function payForm(id){const s=set();const p=id?S.data.payments[id]:{date:dayKey(new Date()),status:'received',currency:'USD',fx:1,feeMode:'usdt',rate:s.rate||''};
+  const leads=[['',t('none')],...list('leads').map(l=>[l.id,l.name]).sort((a,b)=>a[1].localeCompare(b[1]))];
+  const F=[{k:'date',label:t('p_date'),type:'date'},{k:'status',label:t('p_status'),type:'select',opts:[['received',t('pst_received')],['pending',t('pst_pending')]]},
+   {k:'leadId',label:t('pj_lead'),type:'select',opts:leads},{k:'method',label:t('p_method')},
+   {k:'currency',label:t('p_cur'),type:'select',opts:opt(CURS)},{k:'invoiced',label:t('p_inv'),type:'number'},{k:'fx',label:t('p_fx'),type:'number'},{k:'gross',label:t('p_gross'),type:'number'},
+   {k:'feeMode',label:t('p_feemode'),type:'select',opts:[['usdt',t('fm_usdt')],['percent',t('fm_pct')]]},{k:'fee',label:t('p_fee'),type:'number'},
+   {k:'rate',label:t('p_rate'),type:'number'},{k:'txid',label:t('p_tx'),ltr:1},{k:'note',label:t('notes'),type:'textarea',span:1,rows:2}];
+  if(S.assets)F.push({k:'receipt',label:t('p_receipt'),type:'file',span:1});
+  openForm({title:id?t('edit'):t('add_pay'),fields:F,values:p,
+   preview:v=>{const c=payCalc(v);if(!c.gross)return '';return `${esc(t('net'))}: <b>${fmt(c.net)}</b> USDT · ${esc(t('fee'))}: <b>${fmt(c.fee)}</b> (${fmt(c.feePct,2)}%) · ${esc(t('toman'))}: <b>${fmt(c.toman,0)}</b>${c.leak!=null?` · ${esc(t('leak'))}: <b>${fmt(c.leak*100,1)}%</b>`:''}`},
+   onSave:async v=>{const o={...p,...v};delete o.receipt;['invoiced','fx','gross','fee','rate'].forEach(k=>o[k]=num(v[k]));
+     if(v.receipt&&S.assets){const r=await S.assets.upload(v.receipt);o.receiptUrl=r.url;o.receiptId=r.id}
+     if(!o.id)o.createdAt=nowISO();await put('payments',o)},
+   onDelete:id?()=>{del('payments',id);toast(t('deleted'))}:null})}
+function tplForm(k){const cur=tplGet(k);openForm({title:t('tpl_edit')+': '+k,fields:[{k:'subject',label:t('subject'),ltr:1,span:1},{k:'body',label:t('body'),type:'textarea',rows:14,ltr:1,span:1}],values:cur,
+  onSave:async v=>{await put('templates',{id:k,subject:v.subject,body:v.body})},
+  onDelete:S.data.templates[k]?()=>{del('templates',k)}:null,extra:`<div class="help" style="grid-column:1/-1">${esc(t('tpl_vars'))}</div>`})}
+function replyForm(id){const l=S.data.leads[id];
+  openForm({title:t('log_reply')+': '+l.name,fields:[{k:'kind',label:t('log_reply'),type:'select',opts:[['interested',t('r_interested')],['question',t('r_question')],['no',t('r_no')],['unsub',t('r_unsub')]]},{k:'text',label:t('r_note'),type:'textarea',span:1,rows:3}],values:{kind:'interested'},
+   onSave:async v=>{const o={...l};if(v.kind==='no'){o.stage='lost'}else if(v.kind==='unsub'){o.stage='lost';o.dnc=true}else if(['new','researched','contacted'].includes(o.stage)){o.stage='replied'}
+     await put('leads',o);await addLog(id,'reply',(t('r_'+v.kind))+(v.text?': '+v.text:''))}})}
+function importForm(){
+  openForm({title:t('imp_title'),fields:[{k:'file',label:t('imp_file'),type:'file',span:1},{k:'text',label:t('imp_paste'),type:'textarea',rows:7,ltr:1,span:1}],values:{},extra:`<div class="help" style="grid-column:1/-1">${esc(t('imp_help'))}</div>`,
+   onSave:async v=>{let txt=v.text||'';if(v.file)txt=await v.file.text();const rows=parseCSV(txt);if(rows.length<2)throw new Error('CSV');
+     const h=rows[0].map(x=>x.trim().toLowerCase());const col=n=>h.indexOf(n.toLowerCase());
+     const get=(r,...ns)=>{for(const n of ns){const i=col(n);if(i>=0&&r[i])return r[i].trim()}return ''};
+     const have=list('leads');let add=0,dup=0;
+     for(const r of rows.slice(1)){const name=get(r,'name','agency');if(!name)continue;const email=get(r,'email').toLowerCase();const site=get(r,'website','site').replace(/^https?:\/\/(www\.)?/,'').replace(/\/$/,'').toLowerCase();
+       if(have.some(l=>(email&&(l.email||'').toLowerCase()===email)||(site&&(l.website||'').replace(/^https?:\/\/(www\.)?/,'').replace(/\/$/,'').toLowerCase()===site)||l.name.toLowerCase()===name.toLowerCase())){dup++;continue}
+       const plat0=get(r,'platform').toLowerCase();const c0=(get(r,'category')||'').toLowerCase();const category=['airbnb','booking','agency'].includes(c0)?c0:((get(r,'segment')||'').toLowerCase().startsWith('h')?(plat0==='booking'?'booking':'airbnb'):'agency');const seg=category==='agency'?'agent':'host';const plat=category==='agency'?'':category;
+       const ig=get(r,'instagram');const channel=email?'email':(plat==='airbnb'||plat==='booking')?plat:ig?'instagram':'email';
+       const o={id:uid(),segment:seg,category,country:get(r,'country'),currency:get(r,'currency').toUpperCase(),nightlyUsd:num(get(r,'nightlyUsd','nightly')),photos:num(get(r,'photos')),name,contactName:get(r,'contactname','contact'),email,phone:get(r,'phone'),instagram:ig,website:get(r,'website','site'),market:get(r,'market','city'),size:get(r,'size','type'),notes:get(r,'notes'),source:get(r,'source'),listingUrl:get(r,'listingurl','listing'),platform:plat,channel,
+         independent:get(r,'independent')||'unknown',video:get(r,'video')||'unknown',verified:/^(1|true|yes|y|verified)$/i.test(get(r,'verified')),stage:'new',step:0,score:num(get(r,'score'))||3,createdAt:nowISO()};
+       have.push(o);await put('leads',o);add++}
+     toast(`${t('imported')}: ${add}${dup?` · ${dup} ${t('skipped')}`:''}`)}})}
+
+
+const ONLINE_URL='https://claude.ai/artifact/6Y9PvBiYQjhqAr51Zmw34q';
+function instHint(){if(matchMedia('(display-mode: standalone)').matches)return t('inst_done');if(/iphone|ipad|ipod/i.test(navigator.userAgent))return t('inst_ios');return t('inst_other')}
+let qrLib=null;
+function loadQR(){if(qrLib)return qrLib;qrLib=new Promise((res,rej)=>{const sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js';sc.onload=()=>window.qrcode?res(window.qrcode):rej();sc.onerror=rej;document.head.appendChild(sc)});return qrLib}
+async function showSync(){
+  const root=$('#modal-root');
+  root.innerHTML=`<div class="scrim" id="scrim"><div class="modal" role="dialog" aria-modal="true" aria-label="${esc(t('sync_title'))}"><header><h3>${esc(t('sync_title'))}</h3><button type="button" class="btn ghost sm" data-x2="close">${esc(t('close'))}</button></header><div class="body" style="grid-template-columns:minmax(0,1fr)"><p class="help" style="margin:0">${esc(t('sync_help'))}</p><div class="qr" id="qrBox">…</div><input class="inp linkbox" readonly id="syncLink" value="${esc(ONLINE_URL)}"></div><footer><button class="btn primary" data-x2="copy">${esc(t('sync_copy'))}</button><a class="btn" href="${esc(ONLINE_URL)}" target="_blank" rel="noopener">${esc(t('sync_open'))}</a><button class="btn" data-x2="close">${esc(t('close'))}</button></footer></div></div>`;
+  root.onclick=e=>{const x=e.target.closest('[data-x2]');if(e.target.id==='scrim'||(x&&x.dataset.x2==='close'))closeModal();if(x&&x.dataset.x2==='copy')copy(ONLINE_URL)};
+  try{const q=(await loadQR())(0,'M');q.addData(ONLINE_URL);q.make();const b=$('#qrBox');if(b)b.innerHTML=q.createSvgTag({cellSize:4,margin:2,scalable:true})}catch{const b=$('#qrBox');if(b)b.innerHTML=`<span class="help">${esc(t('qr_fail'))}</span>`}
+}
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();S.installEvt=e;if(S.tab==='settings'&&S.ready)render()});
+
+/* ---------- events ---------- */
+document.addEventListener('click',async e=>{
+  const tb=e.target.closest('[data-tab]');if(tb){S.tab=tb.dataset.tab;render();window.scrollTo(0,0);return}
+    const ct=e.target.closest('[data-cat]');if(ct){S.f.cat=ct.dataset.cat;render();return}
+  const pf=e.target.closest('[data-pf]');if(pf){S.pjFilter=pf.dataset.pf;render();return}
+  const fp=e.target.closest('[data-fp]');if(fp){S.finPeriod=fp.dataset.fp;render();return}
+  const lg=e.target.closest('[data-lang]');if(lg){S.lang=lg.dataset.lang;store.set('lm_lang',S.lang);render();return}
+  const th=e.target.closest('[data-theme]');if(th){applyTheme(th.dataset.theme);render();return}
+  const a=e.target.closest('[data-act]');if(!a)return;const id=a.dataset.id;
+  switch(a.dataset.act){
+   case 'settings':S.tab='settings';render();break;
+   case 'lead-new':leadForm();break;case 'lead-edit':leadForm(id);break;case 'import':importForm();break;
+   case 'pj-new':pjForm();break;case 'pj-edit':pjForm(id);break;
+   case 'pay-new':payForm();break;case 'pay-edit':payForm(id);break;
+   case 'tpl-edit':tplForm(a.dataset.k);break;
+   case 'reply':replyForm(id);break;
+   case 'rate-save':{const r=num($('#rate_in').value);await putSettings({rate:r,rateAt:nowISO()});toast(t('saved'));break}
+   case 'settings-save':{const p={};['senderName','senderEmail','brand'].forEach(k=>p[k]=$('#s_'+k).value.trim());p.priceCur=($('#s_priceCur').value.trim().toUpperCase()||'EUR');['limit','minNightly','gap1','gap2','hostVideo','hostVideoIntro','host3d','agentReel','agentPack4'].forEach(k=>p[k]=num($('#s_'+k).value));await putSettings(p);toast(t('saved'));break}
+   case 'export-leads':saveFile('landmark-leads.csv',toCSV(list('leads'),['name','category','contactName','email','phone','instagram','website','market','country','currency','nightlyUsd','photos','size','channel','stage','step','verified','dnc','score','source','listingUrl','notes']),'text/csv');break;
+   case 'export-pay':saveFile('landmark-payments.csv',toCSV(list('payments').map(p=>({...p,...(c=>({net:c.net,feeUsdt:c.fee,toman:c.toman}))(payCalc(p))})),['date','status','leadId','method','currency','invoiced','fx','gross','feeMode','fee','feeUsdt','net','rate','toman','txid','note']),'text/csv');break;
+   case 'export-json':saveFile('landmark-backup-'+dayKey(new Date())+'.json',JSON.stringify(S.data,null,1),'application/json');break;
+   case 'import-json':{const inp=document.createElement('input');inp.type='file';inp.accept='application/json,.json';inp.onchange=async()=>{try{const d=JSON.parse(await inp.files[0].text());let n=0;
+     if(S.db){for(const c of Object.keys(S.data))for(const o of Object.values(d[c]||{})){await put(c,o);n++}}
+     else{for(const c of Object.keys(S.data))for(const o of Object.values(d[c]||{})){if(!o||!o.id)continue;const cur=S.data[c][o.id];if(!cur||(o.updatedAt||'')>=(cur.updatedAt||'')){S.data[c][o.id]=o;n++}delete TOMB[c+'/'+o.id]}tombSave();saveLocal();render()}
+     toast(t('imported')+': '+n)}catch(err){toast(t('err')+': JSON')}};inp.click();break}
+   case 'sync':showSync();break;
+   case 'install':{if(S.installEvt){S.installEvt.prompt();try{await S.installEvt.userChoice}catch{}S.installEvt=null;render()}break}
+   case 'pf-stage':{S.f.stage=a.dataset.st;S.tab='leads';render();window.scrollTo(0,0);break}
+   case 'msg-open':case 'queue-open':S.tab='mail';MC.tab='compose';mcPick(id);break;
+   case 'set-stage':try{await setStage(id,a.dataset.st);render()}catch(err){toast(t('err')+': '+((err&&err.message)||err),7000)}break;
+   case 'sync-create':await syncCreate();break;
+   case 'sync-connect':await syncConnect();break;
+   case 'sync-now':await syncNow();break;
+   case 'sync-code':{const b=$('#sy_codebox');if(b){b.innerHTML=`<p class="help">${esc(t('sy_code_help'))}</p><textarea class="inp" id="sy_codeval" readonly rows="3" dir="ltr">${esc(codeOf())}</textarea><button type="button" class="btn" data-act="sync-copycode">${esc(t('copy_body'))}</button>`}break}
+   case 'sync-copycode':await copy(codeOf());break;
+   case 'sync-off':{if(confirm(t('sy_off_confirm'))){SYNC.cfg=null;store.set('lm_sync','');SYNC.status='off';render();syncDraw()}break}
+   case 'geo-region':S.f.region=a.dataset.v;S.f.city='';render();break;
+   case 'geo-city':S.f.city=a.dataset.v;render();break;
+   case 'mc-pick':mcPick(id);break;
+   case 'mc-back':MC.ed=false;render();break;
+   case 'mc-tab':MC.tab=a.dataset.tab2;render();break;
+   case 'mc-flt':MC.flt=a.dataset.k;render();break;
+   case 'mc-cat':MC.cat=a.dataset.c;render();break;
+   case 'mc-step':MC.step=+a.dataset.step;render();break;
+   case 'mc-var':MC.variant=a.dataset.v;render();break;
+   case 'mc-copy':{const r=mcRead();if(r)await copy(r.body);break}
+   case 'mc-copy-su':{const r=mcRead();if(r)await copy(r.subject);break}
+   case 'mc-open':{const r=mcRead();if(!r)break;const rt=routeOf(r.l);
+     if(rt==='email'){if(!openExt(gmail(r.l.email,r.subject,r.body))){}}
+     else{const u=rt==='instagram'?igUrl(r.l.instagram):rt==='site'?httpUrl(r.l.website):httpUrl(r.l.listingUrl);if(u){await copy(r.body);openExt(u,u)}}break}
+   case 'mc-save':await mcDo(async()=>{const r=mcRead();if(!r)return;const x=mcText(r.l);const l={...r.l};l.msgCustom={...(l.msgCustom||{}),[MC.step]:{subject:r.subject,body:r.body,v:x.v}};await put('leads',l);delete MC.draft[x.key];MC.dirty=false;toast(t('saved'));render()});break;
+   case 'mc-reset':await mcDo(async()=>{const l0=S.data.leads[MC.sel];if(!l0)return;const l={...l0};const c={...(l.msgCustom||{})};delete c[MC.step];l.msgCustom=c;await put('leads',l);Object.keys(MC.draft).filter(k=>k.startsWith(l.id+'|'+MC.step+'|')).forEach(k=>delete MC.draft[k]);MC.dirty=false;render()});break;
+   case 'mc-sent':await mcDo(async()=>{const r=mcRead();if(!r)return;if(/\[YOUR NAME\]|\{\{/.test(r.body+r.subject)){mcErr(t('mc_need_name'));return}
+     const nx=mcNext();await markSent(r.l.id);MC.dirty=false;MC.sel=nx;MC.step=0;MC.variant='';if(!nx)MC.ed=false;render();window.scrollTo(0,0)});break;
+   case 'mc-reply':if(MC.sel)replyForm(MC.sel);break;
+   case 'mc-next':{const nx=mcNext();if(nx){MC.sel=nx;MC.step=0;MC.variant='';render();window.scrollTo(0,0)}break}
+   case 'mc-setname':await mcDo(async()=>{const v=($('#mc_sender')||{}).value;if(!v||!v.trim()){mcErr(t('mc_need_name'));return}await putSettings({senderName:v.trim()});render()});break;
+   case 'hide-access':{try{localStorage.setItem('lm_hide_access','1')}catch{}render();break}
+   case 'app-dl':{let txt='';
+     try{if(SKEL.length>3000){const seed={};Object.keys(S.data).forEach(c=>seed[c]=S.data[c]);txt=SKEL.replace(/(<body[^>]*>)<script>window\.LM_SEED=[\s\S]*?<\/script>/i,'$1').replace(/<body([^>]*)>/i,m=>m+'<script>window.LM_SEED='+JSON.stringify(seed).replace(/</g,'\\u003c')+'<'+'/script>')}}catch{}
+     if(!txt){try{const r=await fetch('landmark-panel.html');if(r.ok)txt=await r.text()}catch{}}
+     if(!txt){toast(t('err'));break}
+     await saveFile('Landmark-Panel.html',txt,'text/html');break}
+   case 'diag':{const out=$('#diag_out');const say=m=>{if(out)out.textContent=m};
+     if(!S.db){say(t('diag_local'));break}
+     try{await S.db.collection('diag').doc('ping').set({ts:nowISO()});const g=await S.db.collection('diag').doc('ping').get();say(t('diag_ok')+(g.exists?' ✓':' ?'))}catch(e){say(t('err')+': '+(e.code||'')+' '+(e.message||'')+' - '+t('err_write'))}break}
+  }});
+document.addEventListener('input',e=>{
+});
+document.addEventListener('input',e=>{if(e.target.id==='flt_q'){S.f.q=e.target.value;const el=$('#leadlist');if(el)el.innerHTML=leadsListHTML()}});
+document.addEventListener('change',e=>{const m={flt_stage:'stage',flt_market:'market'}[e.target.id];if(m){S.f[m]=e.target.value;const el=$('#leadlist');if(el)el.innerHTML=leadsListHTML()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+function applyTheme(x){store.set('lm_theme',x);const r=document.documentElement;if(x==='auto')r.removeAttribute('data-theme');else r.setAttribute('data-theme',x)}
+
+/* ---------- boot ---------- */
+async function boot(){
+  applyTheme(store.get('lm_theme')||'auto');
+  render();
+  let db=null,dl=null,as=null;
+  if(window.claude&&typeof window.claude.use==='function'){
+    try{[db,dl,as]=await Promise.all([window.claude.use('db').catch(()=>null),window.claude.use('downloads').catch(()=>null),window.claude.use('assets').catch(()=>null)])}catch{}
+  }
+  S.dl=dl;S.assets=as;
+  if(db){S.db=db;S.mode='cloud';
+    const cols=Object.keys(S.data);let pending=cols.length;
+    cols.forEach(c=>db.collection(c).onSnapshot(snap=>{const m={};snap.docs.forEach(d=>{m[d.id]={id:d.id,...d.data()}});Object.keys(PEND).forEach(k=>{const[cc,ii]=k.split('/');if(cc===c)m[ii]=PEND[k]});S.data[c]=m;if(pending>0){pending--;if(pending===0){S.ready=true}}if(S.ready)softRender()},()=>{if(pending>0){pending--;if(pending===0)S.ready=true;softRender()}}));
+    setTimeout(()=>{if(!S.ready){S.ready=true;softRender()}},6000);
+  }else{S.mode='local';S.standalone=!!window.LM_SEED||location.protocol==='file:';if(store.set('lm_probe','1')===false)S.storeBad=true;try{const d=JSON.parse(store.get('lm_data')||'null')||window.LM_SEED||{};for(const c of Object.keys(S.data))S.data[c]=d[c]||{}}catch{}S.ready=true;render();if(syncOn())syncNow()}
+}
+function softRender(){ if($('#modal-root').firstChild){drawChrome();return}
+  const ae=document.activeElement;if(ae&&['INPUT','TEXTAREA'].includes(ae.tagName)&&ae.id!=='flt_q'&&$('#view').contains(ae)){drawChrome();return}
+  render() }
+/* ================= DEVICE SYNC (private GitHub Gist) ================= */
+const GH='https://api.github.com',SCOLS=['leads','logs','projects','payments','templates','settings'];
+const SYNC={cfg:null,status:'off',last:'',err:'',busy:false,dirty:false,t:null,apply:false};
+(function(){try{SYNC.cfg=JSON.parse(store.get('lm_sync')||'null')}catch{}SYNC.status=SYNC.cfg?'idle':'off';SYNC.last=(SYNC.cfg&&SYNC.cfg.last)||''})();
+let TOMB={};try{TOMB=JSON.parse(store.get('lm_del')||'{}')}catch{}
+const tombSave=()=>store.set('lm_del',JSON.stringify(TOMB));
+const syncOn=()=>!!(SYNC.cfg&&SYNC.cfg.token&&SYNC.cfg.gist&&S.mode!=='cloud');
+function syncCfgSave(){store.set('lm_sync',JSON.stringify({...SYNC.cfg,last:SYNC.last}))}
+class SyncErr extends Error{constructor(code,msg){super(msg||code);this.code=code}}
+async function gh(path,opt={}){let r;
+  try{r=await fetch(GH+path,{...opt,headers:{Authorization:'Bearer '+SYNC.cfg.token,Accept:'application/vnd.github+json','Content-Type':'application/json'}})}catch{throw new SyncErr('net')}
+  if(r.status===401)throw new SyncErr('token');if(r.status===404)throw new SyncErr('notfound');
+  if(r.status===403||r.status===429)throw new SyncErr('rate');if(!r.ok)throw new SyncErr('http',String(r.status));return r.json()}
+const syncMsg=e=>({net:t('sy_e_net'),token:t('sy_e_token'),notfound:t('sy_e_notfound'),rate:t('sy_e_rate')}[e&&e.code])||(t('err')+': '+((e&&e.message)||''));
+function packCols(){const f={};SCOLS.forEach(c=>f[c+'.json']={content:JSON.stringify(S.data[c]||{})});f['deleted.json']={content:JSON.stringify(TOMB)};f['meta.json']={content:JSON.stringify({app:'landmark-panel',v:1,at:nowISO()})};return f}
+function mergeIn(remote){let chLocal=false;const push=new Set();const del={...remote.del};
+  for(const k of Object.keys(TOMB)){if(!(k in del)||TOMB[k]>del[k]){del[k]=TOMB[k];push.add('deleted')}}
+  for(const k of Object.keys(del)){if(!(k in TOMB)||del[k]>TOMB[k]){TOMB[k]=del[k];}}
+  for(const c of SCOLS){const L=S.data[c],R=remote.cols[c]||{};
+    for(const id of new Set([...Object.keys(L),...Object.keys(R)])){const l=L[id],r=R[id],k=c+'/'+id;
+      if(del[k]){const stamp=[l&&l.updatedAt,r&&r.updatedAt].filter(Boolean).sort().pop()||'';
+        if(del[k]>=stamp){if(l){delete L[id];chLocal=true}if(r)push.add(c);continue}
+        delete del[k];delete TOMB[k];push.add('deleted')}
+      if(l&&!r){push.add(c)}else if(r&&!l){L[id]=r;chLocal=true}
+      else if((r.updatedAt||'')>(l.updatedAt||'')){L[id]=r;chLocal=true}
+      else if((l.updatedAt||'')>(r.updatedAt||'')){push.add(c)}}}
+  const cut=new Date(Date.now()-90*864e5).toISOString();for(const k of Object.keys(TOMB))if(TOMB[k]<cut){delete TOMB[k]}
+  return{chLocal,push}}
+async function syncNow(){if(!syncOn()||SYNC.busy)return;SYNC.busy=true;SYNC.status='sync';syncDraw();
+  try{const g=await gh('/gists/'+SYNC.cfg.gist);const rd=async f=>{if(!f)return null;let c=f.content;if(f.truncated||c==null){const x=await fetch(f.raw_url);if(!x.ok)throw new SyncErr('http','raw');c=await x.text()}try{return JSON.parse(c)}catch{return null}};
+    const remote={cols:{},del:{}};for(const c of SCOLS)remote.cols[c]=(await rd(g.files[c+'.json']))||{};remote.del=(await rd(g.files['deleted.json']))||{};
+    const m=mergeIn(remote);
+    if(m.chLocal){SYNC.apply=true;try{saveLocal()}finally{SYNC.apply=false}tombSave();softRender()}else tombSave();
+    if(m.push.size){const all=packCols(),files={};m.push.forEach(c=>{const n=c+'.json';files[n]=all[n]});files['deleted.json']=all['deleted.json'];files['meta.json']=all['meta.json'];await gh('/gists/'+SYNC.cfg.gist,{method:'PATCH',body:JSON.stringify({files})})}
+    SYNC.last=nowISO();SYNC.status='ok';SYNC.err='';syncCfgSave()}
+  catch(e){SYNC.status='err';SYNC.err=syncMsg(e)}
+  finally{SYNC.busy=false;syncDraw();if(SYNC.dirty){SYNC.dirty=false;syncSoon()}}}
+function syncSoon(ms=2500){if(!syncOn())return;if(SYNC.busy){SYNC.dirty=true;return}clearTimeout(SYNC.t);SYNC.t=setTimeout(syncNow,ms)}
+const syncBadge=()=>!syncOn()?'○':SYNC.status==='sync'?'⟳':SYNC.status==='err'?'⚠':'☁';
+function syncLine(){if(!syncOn())return t('sy_off');const w=SYNC.status==='sync'?t('sy_syncing'):SYNC.status==='err'?'⚠ '+SYNC.err:'✓ '+t('sy_ok');return w+(SYNC.last?' · '+t('sy_last')+': '+new Date(SYNC.last).toLocaleString(S.lang==='fa'?'fa-IR-u-nu-latn':'en-GB'):'')}
+function syncDraw(){const el=$('#sy_status');if(el)el.textContent=syncLine();const sm=document.querySelector('#title .ver');if(sm)sm.textContent='v'+VERSION+' · '+syncBadge();drawChrome()}
+const codeOf=()=>'LMS1.'+btoa(JSON.stringify({t:SYNC.cfg.token,g:SYNC.cfg.gist}));
+function parseCode(c){try{c=String(c||'').trim();if(!c.startsWith('LMS1.'))return null;const o=JSON.parse(atob(c.slice(5)));return o.t&&o.g?{token:o.t,gist:o.g}:null}catch{return null}}
+function syncCard(){if(S.mode==='cloud')return '';const on=syncOn();
+  const link='https://github.com/settings/tokens/new?scopes=gist&description=Landmark+Panel';
+  return `<div class="card" id="sycard"><h2>${esc(t('sy_title'))}</h2><p class="help" style="margin-top:0">${esc(t('sy_help'))}</p>
+   <div class="s" id="sy_status" style="margin-bottom:10px">${esc(syncLine())}</div>
+   ${on?`<div style="display:flex;flex-wrap:wrap;gap:8px"><button type="button" class="btn primary" data-act="sync-now">${esc(t('sy_now'))}</button><button type="button" class="btn" data-act="sync-code">${esc(t('sy_showcode'))}</button><button type="button" class="btn danger" data-act="sync-off">${esc(t('sy_off_btn'))}</button></div><div id="sy_codebox"></div>`
+   :`<ol class="help" style="padding-inline-start:20px;line-height:1.9"><li>${esc(t('sy_s1'))} <a href="${link}" target="_blank" rel="noopener">${esc(t('sy_s1b'))}</a></li><li>${esc(t('sy_s2'))}</li></ol>
+   <div class="field"><label for="sy_token">${esc(t('sy_token'))}</label><input id="sy_token" class="inp" type="password" autocomplete="off" dir="ltr" placeholder="ghp_..."></div>
+   <div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px"><button type="button" class="btn primary" data-act="sync-create">${esc(t('sy_create'))}</button></div>
+   <div class="field"><label for="sy_code">${esc(t('sy_code'))}</label><input id="sy_code" class="inp" autocomplete="off" dir="ltr" placeholder="LMS1...."></div>
+   <div style="margin-top:8px"><button type="button" class="btn" data-act="sync-connect">${esc(t('sy_connect'))}</button></div>`}
+   <div class="help" id="sy_msg" role="alert" style="margin-top:8px;color:#e0605a"></div></div>`}
+const syMsg=m=>{const e=$('#sy_msg');if(e)e.textContent=m||''};
+async function syncCreate(){const tk=($('#sy_token')||{}).value;if(!tk||!tk.trim()){syMsg(t('sy_need_token'));return}
+  SYNC.cfg={token:tk.trim(),gist:''};syMsg(t('sy_creating'));
+  try{const g=await gh('/gists',{method:'POST',body:JSON.stringify({description:'Landmark Panel data (private)',public:false,files:packCols()})});SYNC.cfg.gist=g.id;SYNC.status='ok';SYNC.last=nowISO();syncCfgSave();toast(t('sy_done'));render()}
+  catch(e){SYNC.cfg=null;syMsg(syncMsg(e))}}
+async function syncConnect(){const o=parseCode(($('#sy_code')||{}).value);if(!o){syMsg(t('sy_bad_code'));return}
+  SYNC.cfg={token:o.token,gist:o.gist};syMsg(t('sy_connecting'));
+  try{await gh('/gists/'+o.gist);syncCfgSave();SYNC.status='idle';await syncNow();toast(t('sy_done'));render()}catch(e){SYNC.cfg=null;syMsg(syncMsg(e))}}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncSoon(300)});
+window.addEventListener('online',()=>syncSoon(500));window.addEventListener('focus',()=>syncSoon(800));
+setInterval(()=>{if(!document.hidden&&syncOn())syncNow()},60000);
+
+/* ================= CITY / REGION FILTER ================= */
+const REGION_OF={Marbella:'Costa del Sol','Ibiza Town':'Ibiza',Dubrovnik:'Croatia','Porto Cervo':'Sardinia',Madrid:'Madrid'};
+function geo(l){const m=String(l.market||l.country||'').trim();let city='',region='';let x;
+  if((x=m.match(/^(.+?)\s*\((.+)\)$/))){region=x[1].trim();city=x[2].trim()}
+  else if(m.includes(',')){const p=m.split(',').map(s=>s.trim());city=p[0];region=REGION_OF[city]||p.slice(1).join(', ')}
+  else{city=m;region=REGION_OF[m]||m}
+  if(l.city)city=String(l.city).trim();if(l.region)region=String(l.region).trim();
+  return{city:city||'—',region:region||'—'}}
+const cityOf=l=>geo(l).city,regionOf=l=>geo(l).region;
+const geoOk=l=>{if(!S.f.region)return true;const g=geo(l);return g.region===S.f.region&&(!S.f.city||g.city===S.f.city)};
+function geoBar(L){const R={};L.forEach(l=>{const g=geo(l);const r=R[g.region]||(R[g.region]={n:0,c:{}});r.n++;r.c[g.city]=(r.c[g.city]||0)+1});
+  const regs=Object.entries(R).sort((a,b)=>b[1].n-a[1].n||a[0].localeCompare(b[0]));
+  if(S.f.region&&!R[S.f.region]){S.f.region='';S.f.city=''}
+  const b=(act,v,label,n,on)=>`<button type="button" class="gchip ${on?'on':''}" data-act="${act}" data-v="${esc(v)}" aria-pressed="${on}">${esc(label)}${n!=null?` <i>${n}</i>`:''}</button>`;
+  let h=`<div class="geo"><div class="geolab">${esc(t('geo_region'))}</div><div class="geobar">${b('geo-region','',t('geo_all'),L.length,!S.f.region)}${regs.map(([r,o])=>b('geo-region',r,r,o.n,S.f.region===r)).join('')}</div>`;
+  if(S.f.region&&R[S.f.region]){const cs=Object.entries(R[S.f.region].c).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+    if(cs.length>1||cs[0][0]!==S.f.region)h+=`<div class="geolab">${esc(t('geo_city'))}</div><div class="geobar">${b('geo-city','',t('geo_all_region'),R[S.f.region].n,!S.f.city)}${cs.map(([c,n])=>b('geo-city',c,c,n,S.f.city===c)).join('')}</div>`}
+  return h+'</div>'}
+function geoStats(L){if(!S.f.region)return '';const A=L.filter(geoOk);const sent=A.filter(l=>(l.step||0)>0).length,rep=A.filter(l=>['replied','sample','quote','won'].includes(l.stage)).length,won=A.filter(l=>l.stage==='won').length;
+  return `<div class="geostat"><b>${esc(S.f.city||S.f.region)}</b> · ${A.length} ${esc(t('geo_leads'))} · ${sent} ${esc(t('geo_sent'))} · ${rep} ${esc(t('geo_replied'))} · ${won} ${esc(t('geo_won'))}</div>`}
+
+/* ================= MESSAGE CENTER (cold outreach) ================= */
+const ANGLES={
+ ex_liguria:'a Dutch-Italian agency in Dolceacqua, Liguria',
+ ex_dhalia:'your off-market luxury homes and palazzos in Malta',
+ ex_lakeside:'your listings around Menaggio and Argegno on Lake Como',
+ ex_marcela:'a family agency in Lagos with 400+ properties',
+ ex_freespirit:'your ski properties in Méribel',
+ mj_luxusimmo:'your small team in Port d’Andratx',
+ ex_jornet:'your offices in Sant Feliu de Guíxols and Calonge',
+ ex_beauxvillages:'your off-market manoirs and châteaux in South West France',
+ ma_drumelia:'your Puerto Banús listings',
+ ex_hendrich:'your villas, castles and penthouses in Austria',
+ ex_selectvillas:'your homes in Moraira, from under €100k to €6M+',
+ ex_swissexpat:'your off-market homes for expats in Zurich',
+ ex_a1algarve:'your Algarve listings',
+ ex_capitalmc:'your Monaco listings',
+ al_realalgarve:'your listings in Vale do Lobo, Quinta do Lago, Vilamoura and Loulé',
+ ma_panorama:'your Golden Mile and Puente Romano listings',
+ ex_ylp:'your Golden Triangle luxury listings in the Algarve',
+ ex_pureliving:'your Puente Romano listings',ma_pureliving:'your Puente Romano listings',
+ ex_heron:'your lake-view homes on Lake Como',
+ ex_greencoast:'your seaside villas and apartments on the Albanian Riviera',
+ ex_vlora:'your marina residences in Vlora',
+ ex_onegreenway:'your residences at Quinta do Lago',
+ ex_carlton:'your offices on the French Riviera',
+ mj_m21:'your listings in Port d’Andratx'};
+const hash=s=>{let h=0;for(const c of String(s))h=(h*31+c.charCodeAt(0))>>>0;return h};
+const firstName=l=>{const f=(l.contactName||'').trim().split(/\s+/)[0];return f&&!/^(info|team|office|sales|hello)$/i.test(f)?f:''};
+const routeOf=l=>{if(validEmail(l.email))return 'email';if(isHost(l)&&httpUrl(l.listingUrl))return cat(l)==='booking'?'booking':'airbnb';if(l.instagram)return 'instagram';if(httpUrl(l.website))return 'site';return 'none'};
+const styleOf=l=>['instagram','airbnb','booking'].includes(routeOf(l))?'chat':'email';
+function facts(l){const pb=propBits(l),nt=l.notes||'';const m=nt.match(/(\d(?:\.\d+)?)\s*\((\d+) reviews?\)/);const sz=String(l.size||'');
+  return{host:isHost(l),first:firstName(l),place:pb.place,city:(l.market||'').split(',').pop().trim()&&(l.market||'').split(',')[0].trim()||l.country||'',type:pb.type,feat:pb.feat,
+   rating:l.rating||(m&&m[1])||'',reviews:+(l.reviews||(m&&m[2])||0),superhost:/superhost/i.test(nt),size:sz,
+   compact:isHost(l)&&/studio|\b\d{2}\s*m2|small|compact|1 bedroom/i.test(sz+' '+(l.name||'')),
+   angle:l.angle||ANGLES[l.id]||'',stills:/still images|no (property )?videos?/i.test(nt),agency:l.name||'your agency',market:(l.market||l.country||'your market').replace(/\s*\(.*\)/,'')}}
+const wc=s=>(String(s||'').trim().match(/\S+/g)||[]).length;
+function hostObs(f){
+  if(f.superhost&&f.reviews)return `Congratulations on Superhost status, and on ${f.reviews} reviews at ${f.rating} for your ${f.type} in ${f.place}.`;
+  if(f.reviews>=100)return `${f.reviews} reviews at ${f.rating} for your ${f.type} in ${f.place} is a lot of happy guests.`;
+  if(f.reviews)return `I came across your ${f.type} in ${f.place} (${f.rating} from ${f.reviews} reviews).`;
+  return `I came across your ${f.type} in ${f.place}.`}
+function hostWhy(f){
+  if(f.compact)return `Small spaces are the hardest to show in still photos; a short video shows the layout and how it feels to be there.`;
+  if(f.feat)return `The ${f.feat} is the kind of thing that comes across better in motion than in photos.`;
+  return `A short video gives guests a feel for the place before they book.`}
+function agentObs(f){if(!f.angle)return `I was looking at your listings in ${f.market}.`;return /^your /i.test(f.angle)?`I was looking at ${f.angle}.`:`I noticed ${f.agency}, ${f.angle}.`}
+function build(l,step,variant){const f=facts(l),s=set(),sender=s.senderName||'[YOUR NAME]',brand=s.brand||'Landmark Estate Films';
+  const style=styleOf(l),mail=style==='email';const v=variant||['A','B','C'][hash(l.id)%3];
+  const hi=f.first?`Hi ${f.first},`:'Hello,';const sig=`${sender}\n${brand}`;
+  const intro=money(price('hostVideoIntro')),reg=money(price('hostVideo'));
+  const unit=f.host?`your ${f.type} in ${f.place}`:`your ${f.market} listings`;
+  const optout=`P.S. If you'd rather not hear from me, reply "no" and I won't write again.`;
+  let subject='',body='';
+  const subj1={A:f.host?`a short video of your ${f.type} in ${f.city}`:`a free vertical video for one of your ${f.market} listings`,
+               B:f.host?`do you have a video of your ${f.city} ${f.type}?`:`video for ${f.agency}'s listings?`,
+               C:f.host?`free sample video for your ${f.type}`:`free sample video for ${f.agency}`};
+  if(step===1){subject=subj1[v];
+    if(f.host){const obs=`${hostObs(f)} ${hostWhy(f)}`;
+      const offer=`If you like it, the full tour is ${intro} (introductory price for my first clients, normally ${reg}).`;
+      if(mail){
+        body={A:`${hi}\n\n${obs}\n\nI'm ${sender} from ${brand}. We turn a host's own photos into a short video tour: 20-30 seconds, vertical for Instagram and Reels plus a landscape cut for the listing.\n\nI'd like to make one for your ${f.type} for free, so you can judge it before deciding anything. ${offer}\n\nShall I send it over? Just reply "yes".\n\n${sig}\n\nP.S. This is not a booking enquiry. If you'd rather not hear from me, reply "no" and I won't write again.`,
+              B:`${hi}\n\nQuick question: does your ${f.type} in ${f.place} have a video tour yet?\n\n${obs}\n\nI'm ${sender} from ${brand}. I make 20-30 second video tours from a host's own photos, and I'm happy to make one for your listing free of charge so you can see the result. ${offer}\n\nIf that sounds useful, reply "yes" and I'll tell you what I need.\n\n${sig}\n\nP.S. Not a booking enquiry. Reply "no" and I won't contact you again.`,
+              C:`${hi}\n\n${hostObs(f)}\n\nI make short video tours from a host's own photos. Want a free sample for your listing? ${offer}\n\nReply "yes" and I'll start.\n\n${sig}\n\nP.S. Not a booking enquiry; reply "no" to stop hearing from me.`}[v]}
+      else{ // chat
+        const ask=`If you like it, the full tour is ${intro} (introductory price, normally ${reg}).`;
+        body={A:`Hello${f.first?' '+f.first:''}, I'm ${sender} from ${brand}. To be upfront: this is not a booking enquiry. ${obs} I make 20-30 second video tours from a host's own photos and I'd be happy to make one for your listing for free, so you can judge it. ${ask} Interested? If not, just ignore this message.`,
+              B:`Hello${f.first?' '+f.first:''}, quick question (this is not a booking enquiry): does your ${f.type} in ${f.place} have a video tour yet? ${hostWhy(f)} I'm ${sender} from ${brand}; I make short video tours from a host's own photos and can make one for your listing free of charge. ${ask} If you're not interested, please ignore this message.`,
+              C:`Hello${f.first?' '+f.first:''}, ${sender} from ${brand} here. Not a booking enquiry. ${hostObs(f)} I make short video tours from a host's own photos; want a free sample for your listing? ${ask} No worries if not.`}[v];subject=''}
+    }else{ // agency
+      const obs=agentObs(f);const still=f.stills?` The site is mostly still photos, which is where a short video can stand out.`:'';
+      const offer=`If it's useful, regular work is ${money(price('agentReel'))} per video, or 4 videos for ${money(price('agentPack4'))}.`;
+      if(mail){
+        body={A:`${hi}\n\n${obs}${still}\n\nI'm ${sender} from ${brand}. We make 20-30 second vertical videos (Reels, TikTok, Shorts) from a listing's photos: edited, set to music and carrying your branding.\n\nI'd like to make one for a listing of your choice, free. Reply with a link and I'll send the finished video within 48 hours, for your review only; I won't publish it. ${offer}\n\n${sig}\n\n${optout}`,
+              B:`${hi}\n\nDoes ${f.agency} make short vertical videos for listings, or is it mostly still photos?\n\n${obs}${still}\n\nI'm ${sender} from ${brand}. I turn listing photos into 20-30 second Reels/TikTok videos with music and your branding. I'd make one for a listing of your choice free of charge to judge the quality. ${offer}\n\nIf you'd like to see it, just reply with a listing link.\n\n${sig}\n\n${optout}`,
+              C:`${hi}\n\n${obs}\n\nI make 20-30 second vertical videos from listing photos. Send me one listing link and I'll make a finished sample for free within 48 hours. ${offer}\n\n${sig}\n\n${optout}`}[v]}
+      else{
+        body={A:`Hi${f.first?' '+f.first:''}, I'm ${sender} from ${brand}. ${obs} We make 20-30 second vertical videos (Reels/TikTok) from listing photos. I'd like to make one for a listing of yours for free so you can judge the quality. ${offer} Would that be useful?`,
+              B:`Hi${f.first?' '+f.first:''}, does ${f.agency} do short vertical videos for listings? I'm ${sender} from ${brand}; I make 20-30 second Reels from listing photos and can make you a free sample from one listing. ${offer}`,
+              C:`Hi${f.first?' '+f.first:''}, ${sender} from ${brand}. ${obs} Free 20-30s vertical video from any one of your listings, no strings. ${offer}`}[v];subject=''}
+    }
+  }else if(step===2){subject=mail?'Re: '+subj1[v]:'';
+    if(f.host)body=mail?`${hi}\n\nBumping this once in case it got buried. The free sample video for your ${f.type} in ${f.place} is still on offer, and all it takes is a "yes".\n\nIf it's not for you, no problem at all.\n\n${sig}\n\n${optout}`
+      :`Hello${f.first?' '+f.first:''}, a quick follow-up (still not a booking enquiry): the free sample video for your listing is on offer, no pressure either way.`;
+    else body=mail?`${hi}\n\nJust checking my note didn't get buried. The offer stands: one free 20-30 second video from a listing of your choice, so you can judge the quality before deciding anything.\n\n${sig}\n\n${optout}`
+      :`Hi${f.first?' '+f.first:''}, quick follow-up: the free sample video from one of your listings is still on offer. No pressure either way.`;
+  }else{subject=mail?'Last note: '+(f.host?`your ${f.type} in ${f.city}`:f.agency):'';
+    body=`${hi}\n\nThis is my last message so I don't clutter your inbox. If a short video ${f.host?'tour of your '+f.type:'from one of your listings'} would be useful, reply "yes" at any time and I'll make the free sample. Otherwise, I wish you a great season.\n\n${sig}`}
+  return{subject,body,variant:v,style}}
+function msgFor(l,step){const c=l.msgCustom&&l.msgCustom[step];if(c&&(c.body||c.subject))return{subject:c.subject||'',body:c.body||'',custom:true};const b=build(l,step);return{subject:b.subject,body:b.body,custom:false}}
+function qcItems(l,subject,body){const mail=styleOf(l)==='email',n=wc(body),f=facts(l);const s=String(set().senderName||'').trim();
+  return[[!!s&&!/\[YOUR NAME\]|\{\{/.test(body),t('qc_sender')],[n<=(mail?130:95),`${t('qc_len')} (${n})`],[/reply "?no"?|ignore this message|No worries/i.test(body),t('qc_optout')],
+   [!!(f.reviews||f.angle||f.feat||f.compact||l.market),t('qc_personal')],[/[€$£]\d+/.test(body),t('qc_price')],[!mail||(subject&&subject.length<=70),t('qc_subject')]]}
+/* ---------- state + views ---------- */
+const MC={cat:'',flt:'todo',q:'',sel:null,step:0,variant:'',draft:{},tab:'compose',ed:false,dirty:false};
+function mcLeads(){const now=new Date();let L=list('leads').filter(l=>!l.dnc);
+  if(MC.cat)L=L.filter(l=>cat(l)===MC.cat);
+  L=L.filter(geoOk);
+  if(MC.q.trim()){const q=MC.q.trim().toLowerCase();L=L.filter(l=>[l.name,l.market,l.contactName,l.email,l.country].join(' ').toLowerCase().includes(q))}
+  if(MC.flt==='todo')L=L.filter(l=>(due(l)&&due(l)<=now)||readyFirst(l));
+  else if(MC.flt==='sent')L=L.filter(l=>(l.step||0)>0);
+  const rk=l=>(due(l)&&due(l)<=now)?0:(l.stage==='won'||l.stage==='lost')?3:(l.step||0)>0?2:1;
+  return L.sort((a,b)=>rk(a)-rk(b)||closeScore(b).n-closeScore(a).n||(a.name||'').localeCompare(b.name||''))}
+const mcStep=l=>Math.min(maxSteps(l),Math.max(1,(l.step||0)+1));
+function mcCur(){const l=S.data.leads[MC.sel];if(!l)return null;if(!MC.step||MC.stepFor!==l.id){MC.step=mcStep(l);MC.stepFor=l.id;MC.variant=''}return l}
+function mcText(l){const c=l.msgCustom&&l.msgCustom[MC.step];const v=MC.variant||(c&&c.v)||build(l,1).variant;const key=`${l.id}|${MC.step}|${v}`;
+  if(MC.draft[key])return{...MC.draft[key],src:'draft',key,v};
+  if(c&&(c.body||c.subject)&&(!c.v||c.v===v))return{subject:c.subject||'',body:c.body||'',src:'saved',key,v};
+  const b=build(l,MC.step,v);return{subject:b.subject,body:b.body,src:'auto',key,v}}
+const routeLabel=l=>({email:validEmail(l.email)?l.email:'',airbnb:'Airbnb',booking:'Booking',instagram:'Instagram',site:t('r_site'),none:t('r_none')}[routeOf(l)]);
+function mcRow(l){const d=due(l),late=d&&d<=new Date(),r=routeOf(l);
+  return `<button type="button" class="mcrow ${MC.sel===l.id?'on':''}" data-act="mc-pick" data-id="${l.id}"><span class="mct"><b>${esc(l.name)}</b><small>${esc(cityOf(l))}${regionOf(l)!==cityOf(l)?' \u00b7 '+esc(regionOf(l)):''}</small></span><span class="mcm">${chip(t('cat_'+cat(l)))}${chip(routeLabel(l)||r,r==='none'?'bad':'')}${(l.step||0)>0?chip(`${l.step}/${maxSteps(l)}`,late?'warn':'good'):''}${late?chip(t('overdue'),'warn'):''}</span></button>`}
+function mcEditor(l){const x=mcText(l),mail=styleOf(l)==='email',mx=maxSteps(l),r=routeOf(l),f=facts(l);
+  const sender=String(set().senderName||'').trim();
+  const why=[f.host&&f.place?`${t('why_place')}: ${f.place}`:'',f.host?`${t('why_type')}: ${f.type}`:'',f.feat?`${t('why_feat')}: ${f.feat}`:'',f.reviews?`${t('why_rev')}: ${f.rating}/${f.reviews}`:'',f.superhost?'Superhost':'',f.compact?t('why_compact'):'',f.angle?`${t('why_angle')}: ${f.angle}`:'',f.stills?t('why_stills'):''].filter(Boolean);
+  const go=r==='email'?gmail(l.email,x.subject,x.body):r==='airbnb'||r==='booking'?httpUrl(l.listingUrl):r==='instagram'?igUrl(l.instagram):r==='site'?httpUrl(l.website):'';
+  const goLabel={email:t('open_gmail'),airbnb:t('open_listing'),booking:t('open_listing'),instagram:'Instagram',site:t('open_site')}[r]||'';
+  const qc=qcItems(l,x.subject,x.body);
+  return `<div class="card mced" id="mced">
+   <button type="button" class="btn ghost sm mcback" data-act="mc-back">← ${esc(t('mc_list'))}</button>
+   <h2 style="margin:6px 0">${esc(l.name)}</h2>
+   <div class="lk" style="margin:0 0 8px">${chip(t('cat_'+cat(l)))}${chip(t('st_'+l.stage),stageCls(l.stage))}${chip(t('chance')+' '+closeScore(l).n)}${leadLinks(l)}<button type="button" class="btn sm" data-act="lead-edit" data-id="${l.id}">${esc(t('edit'))}</button></div>
+   <div class="s" style="margin:6px 0 4px">${esc(t('stage'))}:</div>${stSel(l)}
+   ${why.length?`<div class="mcwhy"><b>${esc(t('why_title'))}</b> ${why.map(w=>chip(w)).join('')}</div>`:''}
+   ${sender?'':`<div class="banner" style="margin:8px 0"><div style="margin-bottom:6px">${esc(t('msg_nosender'))}</div><div style="display:flex;gap:6px"><input id="mc_sender" class="inp" placeholder="${esc(t('s_sender'))}" style="flex:1"><button type="button" class="btn primary" data-act="mc-setname">${esc(t('save'))}</button></div></div>`}
+   <div class="tabs" style="margin:10px 0 6px">${Array.from({length:mx},(_,i)=>`<button type="button" data-act="mc-step" data-step="${i+1}" aria-pressed="${MC.step===i+1}">${esc(t('step'))} ${i+1}${(l.step||0)>=i+1?' ✓':''}</button>`).join('')}</div>
+   ${MC.step===1?`<div class="tabs" style="margin:0 0 8px"><span class="help" style="align-self:center">${esc(t('mc_style'))}:</span>${['A','B','C'].map(v=>`<button type="button" data-act="mc-var" data-v="${v}" aria-pressed="${x.v===v}">${esc(t('var_'+v))}</button>`).join('')}</div>`:''}
+   <div class="s" style="margin-bottom:6px">${esc(t('mc_via'))}: <b>${esc(routeLabel(l)||'—')}</b>${x.src==='saved'?' · '+esc(t('msg_custom')):x.src==='draft'?' · '+esc(t('mc_draft')):''}</div>
+   ${mail?`<div class="field" style="margin-bottom:8px"><label for="mc_su">${esc(t('subject'))}</label><input id="mc_su" class="inp" dir="ltr" value="${esc(x.subject)}"></div>`:''}
+   <div class="field"><label for="mc_bd">${esc(t('body'))}</label><textarea id="mc_bd" class="inp" dir="ltr" rows="${mail?14:9}">${esc(x.body)}</textarea></div>
+   <div class="mcqc" id="mc_qc">${qc.map(([ok,lab])=>chip((ok?'✓ ':'! ')+lab,ok?'good':'warn')).join('')}</div>
+   <div class="mcact">
+    <button type="button" class="btn primary" data-act="mc-copy">${esc(t('copy_body'))}</button>
+    ${mail?`<button type="button" class="btn" data-act="mc-copy-su">${esc(t('copy_subject'))}</button>`:''}
+    ${go?`<button type="button" class="btn" data-act="mc-open">${esc(goLabel)} ↗</button>`:''}
+    <button type="button" class="btn" data-act="mc-save">${esc(t('msg_save'))}</button>
+    ${x.src!=='auto'?`<button type="button" class="btn" data-act="mc-reset">${esc(t('msg_reset'))}</button>`:''}
+   </div>
+   <div class="mcact" style="margin-top:8px">
+    <button type="button" class="btn primary" data-act="mc-sent">${esc(t('mark_sent'))}</button>
+    <button type="button" class="btn" data-act="mc-reply">${esc(t('log_reply'))}</button>
+    <button type="button" class="btn" data-act="mc-next">${esc(t('msg_next'))} →</button>
+   </div>
+   <div class="help" id="mc_err" style="color:var(--bad,#c0504d);margin-top:8px" role="alert"></div>
+   <p class="help" style="margin:8px 0 0">${esc(t('mc_help'))}</p></div>`}
+function vMail(){
+  const tabs=`<div class="tabs"><button type="button" aria-pressed="${MC.tab==='compose'}" data-act="mc-tab" data-tab2="compose">${esc(t('mc_compose'))}</button><button type="button" aria-pressed="${MC.tab==='history'}" data-act="mc-tab" data-tab2="history">${esc(t('q_log'))}</button></div>`;
+  if(MC.tab==='history'){const lg=list('logs').sort((a,b)=>b.ts.localeCompare(a.ts)).slice(0,150);
+    return tabs+`<div class="card">${lg.length?lg.map(x=>`<div class="row"><div class="grow"><div class="t">${esc(leadName(x.leadId)||'—')}</div><div class="s">${esc(t('lg_'+(x.type==='sent'?'email_sent':x.type)))}${x.text?' · '+esc(x.text):''}</div></div><span class="s">${fd(x.ts)}</span></div>`).join(''):`<div class="empty">${esc(t('log_empty'))}</div>`}</div>`}
+  const L=mcLeads();if(!MC.sel||!S.data.leads[MC.sel])MC.sel=L[0]?L[0].id:null;
+  const cur=mcCur();const n=sentToday();
+  const filters=`<div class="tabs" style="margin-bottom:8px">${[['todo','mc_f_todo'],['sent','mc_f_sent'],['all','mc_f_all']].map(([k,l])=>`<button type="button" data-act="mc-flt" data-k="${k}" aria-pressed="${MC.flt===k}">${esc(t(l))}</button>`).join('')}</div>
+   <div class="tabs" style="margin-bottom:8px"><button type="button" data-act="mc-cat" data-c="" aria-pressed="${!MC.cat}">${esc(t('all'))}</button>${CATS.map(c=>`<button type="button" data-act="mc-cat" data-c="${c}" aria-pressed="${MC.cat===c}">${esc(t('cat_'+c))}</button>`).join('')}</div>
+   ${geoBar(list('leads').filter(l=>!l.dnc&&(!MC.cat||cat(l)===MC.cat)))}${geoStats(list('leads').filter(l=>!l.dnc&&(!MC.cat||cat(l)===MC.cat)))}
+   <input id="mc_q" class="inp" type="search" placeholder="${esc(t('search'))}" value="${esc(MC.q)}" style="margin-bottom:8px;width:100%">`;
+  return tabs+`<p class="help" style="margin:0 0 8px">${esc(t('sent_today'))}: <b>${n}/${num(set().limit)}</b> · ${esc(t('mc_count'))}: <b>${L.length}</b></p>
+   <div class="mc ${MC.ed?'ed':''}"><div class="mclist"><div class="card">${filters}<div class="mcrows">${L.map(mcRow).join('')||`<div class="empty">${esc(t('nothing_ready'))}</div>`}</div></div></div>
+   <div class="mcpane">${cur?mcEditor(cur):`<div class="card empty">${esc(t('pick_lead'))}</div>`}</div></div>`}
+function mcNext(){const L=mcLeads();const i=L.findIndex(x=>x.id===MC.sel);const nx=L[i+1]||L[i-1]||null;return nx?nx.id:null}
+function mcPick(id){MC.sel=id;MC.step=0;MC.variant='';MC.ed=true;render();window.scrollTo(0,0)}
+function mcErr(m){const e=$('#mc_err');if(e)e.textContent=m||''}
+async function mcDo(fn){try{mcErr('');await fn()}catch(e){mcErr(t('err')+': '+((e&&e.message)||e));toast(t('err')+': '+((e&&e.message)||e),7000)}}
+function mcRead(){const l=S.data.leads[MC.sel];if(!l)return null;const su=$('#mc_su'),bd=$('#mc_bd');return{l,subject:su?su.value:'',body:bd?bd.value:''}}
+function openExt(url,fallbackText){let w=null;try{w=window.open(url,'_blank')}catch{}if(w){try{w.opener=null}catch{}return true}
+  if(fallbackText!==undefined){copy(fallbackText);toast(t('link_blocked_copied'),7000)}else{copy(url).then(ok=>{if(ok)toast(t('link_copied'),6000)})}return false}
+document.addEventListener('input',e=>{const id=e.target.id;if(id==='mc_su'||id==='mc_bd'){const r=mcRead();if(!r)return;const x=mcText(r.l);MC.draft[x.key]={subject:r.subject,body:r.body};MC.dirty=true;
+  const q=$('#mc_qc');if(q)q.innerHTML=qcItems(r.l,r.subject,r.body).map(([ok,lab])=>chip((ok?'✓ ':'! ')+lab,ok?'good':'warn')).join('')}
+  if(id==='mc_q'){MC.q=e.target.value;const rows=document.querySelector('.mcrows');if(rows)rows.innerHTML=mcLeads().map(mcRow).join('')||`<div class="empty">${esc(t('nothing_ready'))}</div>`}});
+
+(function(){try{const l=document.createElement('link');l.rel='icon';l.href=LOGO_FAV;document.head.appendChild(l);const m=document.createElement('meta');m.name='theme-color';m.content='#0A1A3A';document.head.appendChild(m)}catch{}})();
+try{if('serviceWorker' in navigator&&window.LM_TARGET==='pages'&&(location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('sw.js').catch(()=>{})}catch{}
+boot();
+
+document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[target=_blank]');if(!a)return;const href=a.getAttribute('href');if(!href||a.getAttribute('aria-disabled')==='true')return;
+  e.preventDefault();let w=null;try{w=window.open(href,'_blank')}catch{}
+  if(w){try{w.opener=null}catch{}}else{copy(href).then(ok=>{if(ok)toast(t('link_copied'),6000)})}});
+window.addEventListener('error',e=>{if(e&&e.message&&!/ResizeObserver/.test(e.message))toast(t('err')+': '+e.message,9000)});
+</script>
+</body></html>
